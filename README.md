@@ -1,2 +1,2 @@
-# robobenchmark.github.io
-Robotbenchmark testing
+# robotbenchmark
+Test repo for new robotbenchmark platform
