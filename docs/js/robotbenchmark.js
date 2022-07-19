@@ -2,7 +2,7 @@ import Project from './project.js';
 import ModalDialog from './modal_dialog.js';
 
 document.addEventListener('DOMContentLoaded', function() {
-  Project.run('webots.cloud', footer(), [{ url: '/', setup: homePage }, { url: '/home', setup: homePage }]);
+  Project.run('robotbenchmark', footer(), [{ url: '/', setup: homePage }, { url: '/home', setup: homePage }]);
 
   function footer() {
     let template = document.createElement('template');
