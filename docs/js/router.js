@@ -75,6 +75,14 @@ export default class Router {
         });
       });
     }
+
+    document.getElementById('navbar-home').addEventListener('mouseover', function(e) {
+      document.getElementById('navbar-logo').src = 'docs/images/robotbenchmark-logo-white-eyes.svg';
+    });
+  
+    document.getElementById('navbar-home').addEventListener('mouseout', function(e) {
+      document.getElementById('navbar-logo').src = 'docs/images/robotbenchmark-logo-white.svg';
+    });
   }
 
   load(page = null, pushHistory = true) {
