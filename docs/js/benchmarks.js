@@ -83,7 +83,7 @@ export default class Benchmarks {
   benchmarkClickEvent(event) {
     if (event.target.id.endsWith('start')) {
       const benchmark = event.target.id.split('-')[0];
-      const url = '/run?url=https://github.com/ThomasOliverKimble/robotbenchmark/blob/testing/docs/benchmarks/' +
+      const url = '/run?url=https://github.com/robobenchmark/robobenchmark.github.io/blob/testing/docs/benchmarks/' +
         benchmark + '/worlds/' + benchmark + '.wbt';
         this.project.load(url);
         return;
