@@ -13,14 +13,17 @@ body {
 
 /* Main Container */
 
-.main-container {
-  position: absolute;
-  height: calc(100% - 3.25rem);
+#main-container {
+  position: relative;
+  min-height: calc(100% - 3rem);
   width: 100%;
-  top: 3.25rem;
-  left: 0;
   overflow-x: hidden;
   min-width: 325px;
+}
+
+#main-container.webotsView {
+  height: calc(100% - 3rem);
+  min-height: 10px;
 }
 
 .container-input {
@@ -43,11 +46,16 @@ body {
 /*  Navbar  */
 
 #navbar {
-  box-shadow: 0 -20px 20px 30px #363636;
+  /* box-shadow: 0 -20px 20px 30px #363636; */
 }
 
 .navbar {
   height: 3.25rem;
+  transition: all 0.3s ease-in-out;
+}
+
+#navbar-home {
+  transition: all 0.3s ease-in-out;
 }
 
 /* .navbar > * > *:hover {

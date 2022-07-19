@@ -11,6 +11,18 @@ export default class Router {
     body.prepend(this.content);
     let that = this;
 
+    /* document.addEventListener('scroll', function(event) {
+      if (window.scrollY == 0 && document.querySelector('.navbar').classList.contains('is-dark')) {
+        document.querySelector('.navbar').classList.toggle('is-dark');
+        document.querySelector('.navbar').classList.toggle('is-light');
+        document.getElementById('navbar-logo').src = 'docs/images/robotbenchmark-logo-black-eyes.svg';
+      } else if (document.querySelector('.navbar').classList.contains('is-light')) {
+        document.querySelector('.navbar').classList.toggle('is-dark');
+        document.querySelector('.navbar').classList.toggle('is-light');
+        document.getElementById('navbar-logo').src = 'docs/images/robotbenchmark-logo-white-eyes.svg';
+      }
+    }); */
+
     body.addEventListener('click', function(event) {
       let element = event.target;
       if (element.tagName !== 'A' && element.parentElement.tagName === 'A')
@@ -39,9 +51,9 @@ export default class Router {
       document.body.removeChild(navbar);
     let template = document.createElement('template');
     template.innerHTML =
-      `<nav id="navbar" class="navbar is-dark is-fixed-top"">
+      `<nav id="navbar" class="navbar is-dark is-fixed-top">
         <div class="navbar-brand">
-          <a class="navbar-item is-size-5" id="navbar-home" href="home" style="margin-right: 30px;">
+          <a class="navbar-item is-size-5" id="navbar-home" href="/" style="margin-right: 30px;">
             <img src="docs/images/robotbenchmark-logo-white.svg" id="navbar-logo"/>&ensp;
               <strong>robot</strong><span class="has-text-primary">benchmark</span>
           </a>

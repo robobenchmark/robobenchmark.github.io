@@ -69,7 +69,6 @@ SpotLight {
 DEF BATTERYOP2 RobotisOp2 {
   translation 0 0 0.277
   controller "marathon"
-  window "<none>"
   selfCollision TRUE
   battery [
     2375.34, 100, 0

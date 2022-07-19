@@ -110,7 +110,6 @@ DEF PIT Pit {
 DEF ROBOT_BB-8 BB-8 {
   translation 0 -0.02 0
   controller "pit_escape"
-  window "<none>"
 }
 PitEscapeBenchmark {
 }

@@ -122,7 +122,7 @@ E-puck {
         }
       ]
       endPoint DEF PENDULUM Solid {
-        translation 0.013998333000000002 8.673617379884035e-19 0.07990002100000006
+        translation 0.013998333000000009 8.673617379884043e-19 0.07990002100000017
         rotation 0 0.9999999999999999 0 1.6207999999999998
         children [
           DEF POLE Transform {

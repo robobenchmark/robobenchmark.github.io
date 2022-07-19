@@ -28,7 +28,6 @@ TexturedBackground {
 DEF PIONEER SquarePathPioneer3dx {
   translation 0 0 0.09439
   controller "square_path"
-  window "<none>"
   controllerArgs [
     "2"
   ]

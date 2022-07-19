@@ -1,7 +1,14 @@
 export default class Benchmarks {
   constructor(routes, project) {
-    routes.push({ url: '/benchmarks', setup: benchmarksPage });
+    this.routes = routes;
+    this.project = project;
     let that = this;
+
+    this.routes.push({ url: '/benchmarks', setup: benchmarksPage });
+    this.routes.push({ url: '/', setup: benchmarksPage });
+
+    document.addEventListener('click', this.benchmarkClickEvent.bind(this));
+
     function benchmarksPage() {
       const template = document.createElement('template');
       template.innerHTML =
@@ -20,7 +27,7 @@ export default class Benchmarks {
             </tbody>
           </table>
         </section>`;
-      project.setup('benchmarks', [], template.content);
+      that.project.setup('benchmarks', [], template.content);
       that.listBenchmarks();
     }
   }
@@ -71,5 +78,31 @@ export default class Benchmarks {
           });
         });
     });
+  }
+
+  benchmarkClickEvent(event) {
+    if (event.target.id.endsWith('start')) {
+      const benchmark = event.target.id.split('-')[0];
+      const url = '/run?url=https://github.com/ThomasOliverKimble/robotbenchmark/blob/testing/docs/benchmarks/' +
+        benchmark + '/worlds/' + benchmark + '.wbt';
+        this.project.load(url);
+        return;
+      this.project.runWebotsView(url);
+      return;
+    }
+    const targetId = event.target.parentNode.id;
+    if (!document.getElementById('benchmark-table'))
+      return;
+    document.getElementById('benchmark-table').childNodes.forEach(function(row) {
+      if (row.lastChild && row.lastChild.childNodes[1].classList.contains('is-primary') && targetId !== row.id) {
+        row.lastChild.childNodes[1].classList.toggle('is-primary');
+        row.classList.toggle('dark-row');
+      }
+    });
+    if (!targetId.startsWith('benchmark'))
+      return;
+    let benchmarkRow = document.getElementById(targetId);
+    benchmarkRow.classList.toggle('dark-row');
+    benchmarkRow.lastChild.childNodes[1].classList.toggle('is-primary');
   }
 }

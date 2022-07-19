@@ -98,10 +98,10 @@ export default class Project extends User {
 
   setupWebotsView(page) {
     const view = (!Project.webotsView)
-      ? '<webots-view id="webots-view" style="height:100%; width:100%; display:block;"></webots-view>' : '';
+      ? '<webots-view id="webots-view"></webots-view>' : '';
     let template = document.createElement('template');
     template.innerHTML = `<section class="section" style="padding:0;height:100%">
-      <div class="container" id="webots-view-container">${view}</div>`;
+      <div class="simulation-container" id="webots-view-container">${view}</div>`;
     template.innerHTML += '</section>';
     this.setup(page, [], template.content);
     if (!Project.webotsView)
@@ -111,18 +111,20 @@ export default class Project extends User {
     document.querySelector('#main-container').classList.add('webotsView');
   }
 
-  runWebotsView(data, fallbackVersion) {
+  runWebotsView(name, url1) {
+    const url = this.findGetParameter('url');
     const server = 'https://testing.webots.cloud/ajax/server/session.php?url=' + url;
     const mode = 'x3d';
 
-    setupWebotsView(url);
+    this.setupWebotsView('benchmark/' +  + '/');
 
     return new Promise((resolve, reject) => {
       let dotIndex = url.lastIndexOf('/') + 1;
-      let thumbnailUrl = (url.slice(0, dotIndex) + "." +url.slice(dotIndex)).replace('github.com',
+      let thumbnailUrl = (url.slice(0, dotIndex) + "." + url.slice(dotIndex)).replace('github.com',
         'raw.githubusercontent.com').replace('/blob', '').replace('.wbt', '.jpg');
-      document.getElementById('webots-view').connect(server, mode, false, undefined, 300, thumbnailUrl);
-      document.getElementById('webots-view').showQuit = false;
+
+      Project.webotsView.connect(server, mode, false, undefined, 300, thumbnailUrl);
+      Project.webotsView.showQuit = false;
       resolve();
     });
 

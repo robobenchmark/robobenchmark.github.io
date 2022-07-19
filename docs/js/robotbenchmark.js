@@ -2,7 +2,7 @@ import Project from './project.js';
 import ModalDialog from './modal_dialog.js';
 
 document.addEventListener('DOMContentLoaded', function() {
-  Project.run('robotbenchmark', footer(), []);
+  Project.run('robotbenchmark', footer(), [{ url: '/run', setup: runPage }]);
 
   function footer() {
     let template = document.createElement('template');
@@ -27,5 +27,10 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
       </footer>`;
     return template.content.firstChild;
+  }
+
+  function runPage(project) {
+    console.log(window.location.href);
+    project.runWebotsView();
   }
 });
