@@ -85,8 +85,8 @@ export default class Benchmarks {
       const benchmark = event.target.id.split('-')[0];
       const url = '/run?url=https://github.com/robobenchmark/robobenchmark.github.io/blob/testing/docs/benchmarks/' +
         benchmark + '/worlds/' + benchmark + '.wbt';
-        this.project.load(url);
-        return;
+      this.project.load(url);
+      return;
       this.project.runWebotsView(url);
       return;
     }
