@@ -7,8 +7,8 @@ export default class Router {
     const body = document.querySelector('body');
     body.classList.add('has-navbar-fixed-top');
     this.resetNavbar();
-    body.append(this.content);
-    body.append(footer);
+    body.prepend(footer);
+    body.prepend(this.content);
     let that = this;
 
     body.addEventListener('click', function(event) {
@@ -41,7 +41,7 @@ export default class Router {
     template.innerHTML =
       `<nav id="navbar" class="navbar is-dark is-fixed-top"">
         <div class="navbar-brand">
-          <a class="navbar-item is-size-5" id="navbar-home" href="/" style="margin-right: 30px;">
+          <a class="navbar-item is-size-5" id="navbar-home" href="home" style="margin-right: 30px;">
             <img src="docs/images/robotbenchmark-logo-white.svg" id="navbar-logo"/>&ensp;
               <strong>robot</strong><span class="has-text-primary">benchmark</span>
           </a>
@@ -51,12 +51,12 @@ export default class Router {
             <span></span>
           </a>
         </div>
-        <div id="router-navbar" class="navbar-menu" style="display: none;">
+        <div id="router-navbar" class="navbar-menu">
           <div class="navbar-start">
-            <a class="navbar-item has-text-grey-light" href="benchmarks">
+            <a class="navbar-item" href="benchmarks">
               Benchmarks
             </a>
-            <a class="navbar-item has-text-grey-light" href="about">
+            <a class="navbar-item" href="about">
               About
             </a>
           </div>
@@ -150,10 +150,6 @@ export default class Router {
 
   setup(title, anchors, content, fullpage = false) {
     document.head.querySelector('#title').innerHTML = this.title + ' - ' + title;
-    let menu = '';
-    for (let i = 0; i < anchors.length; i++)
-      menu += `<a class="navbar-item" href="#${anchors[i].toLowerCase()}">${anchors[i]}</a>`;
-    document.body.querySelector('.navbar-start').innerHTML = menu;
     this.content.innerHTML = '';
     NodeList.prototype.forEach = Array.prototype.forEach;
     let that = this;

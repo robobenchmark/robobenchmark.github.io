@@ -1,5 +1,5 @@
 export default class ModalDialog extends HTMLElement {
-  constructor(title, text, close = 'Ok', action = '', actionType = 'is-success') {
+  constructor(title, text, close = 'Ok', action = '', actionType = 'is-primary') {
     super();
     this.classList.add('modal');
     let actionButton, closeClass;
@@ -7,7 +7,7 @@ export default class ModalDialog extends HTMLElement {
       actionButton = `<button class="button ${actionType}" type="submit">${action}</button> `;
       closeClass = '';
     } else {
-      closeClass = ` is-success`;
+      closeClass = ` is-primary`;
       actionButton = '';
     }
     this.innerHTML =
@@ -67,7 +67,7 @@ export default class ModalDialog extends HTMLElement {
     if (submit)
       submit.classList.remove('is-loading');
   }
-  static run(title, text, close = 'Ok', action = '', actionType = 'is-success') {
+  static run(title, text, close = 'Ok', action = '', actionType = 'is-primary') {
     return new ModalDialog(title, text, close, action, actionType);
   }
 }

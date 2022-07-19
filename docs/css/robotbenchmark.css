@@ -2,7 +2,7 @@ html {
   height: 100%;
   width: 100%;
   overflow-y: auto;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 body {
@@ -50,9 +50,9 @@ body {
   height: 3.25rem;
 }
 
-#sign-up:hover {
-  background-color: #3abb67;
-}
+/* .navbar > * > *:hover {
+  background-color: inherit;
+} */ 
 
 #log-in:hover {
   background-color: #d9d9d9;
@@ -65,14 +65,10 @@ body {
 /*  Footer  */
 
 .footer {
-  position: absolute;
-  bottom: 0;
+  position: relative;
   height: 3rem;
   width: 100%;
-  z-index: 30;
-  padding-top: 10px;
-  padding-right: 10px;
-  padding-bottom: 0;
+  padding: 10px;
   background: linear-gradient(0deg, #181818 0%, #363636 70%);
 }
 

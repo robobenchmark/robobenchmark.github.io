@@ -1,14 +1,16 @@
-import Page from "./page.js";
-
-export default class About extends Page {
-  constructor(routes) {
-    super('about', routes);
-    let that = this;
+export default class About {
+  constructor(routes, project) {
     routes.push({ url: '/about', setup: aboutPage });
+
     function aboutPage() {
       const template = document.createElement('template');
-      template.innerHTML = `<div>About</div>`;
-      that.setup('about', template.content);
+      template.innerHTML =
+        `<section class="section">
+          <div class="container content">
+            About
+          </div>
+        </section>`
+      project.setup('about', [], template.content);
     }
   }
 }

@@ -2,7 +2,7 @@ import Project from './project.js';
 import ModalDialog from './modal_dialog.js';
 
 document.addEventListener('DOMContentLoaded', function() {
-  Project.run('robotbenchmark', footer(), [{ url: '/', setup: homePage }, { url: '/home', setup: homePage }]);
+  Project.run('robotbenchmark', footer(), []);
 
   function footer() {
     let template = document.createElement('template');
@@ -27,9 +27,5 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
       </footer>`;
     return template.content.firstChild;
-  }
-
-  function homePage(project) {
-    
   }
 });

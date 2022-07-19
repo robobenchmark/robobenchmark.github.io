@@ -1,11 +1,17 @@
 import User from './user.js';
-import ModalDialog from './modal_dialog.js';
+import Home from './home.js';
+import Benchmarks from './benchmarks.js';
+import About from './about.js';
 import TermsAndPrivacy from './termsAndPrivacy.js';
+import ModalDialog from './modal_dialog.js';
 
 export default class Project extends User {
   constructor(title, footer, routes) {
     super(title, footer, routes);
-    this.termsOfService = new TermsAndPrivacy(routes, this);
+    new Home(routes, this);
+    new Benchmarks(routes, this);
+    new About(routes, this);
+    new TermsAndPrivacy(routes, this);
     this.load();
   }
 
@@ -90,16 +96,12 @@ export default class Project extends User {
     return result;
   }
 
-  setupWebotsView(page, data) {
+  setupWebotsView(page) {
     const view = (!Project.webotsView)
       ? '<webots-view id="webots-view" style="height:100%; width:100%; display:block;"></webots-view>' : '';
     let template = document.createElement('template');
     template.innerHTML = `<section class="section" style="padding:0;height:100%">
       <div class="container" id="webots-view-container">${view}</div>`;
-    if (data) {
-      const description = data.description.replace('\n', '<br>\n');
-      template.innerHTML += `<div><h1 class="subtitle" style="margin:10px 0">${data.title}</h1>${description}</div>`;
-    }
     template.innerHTML += '</section>';
     this.setup(page, [], template.content);
     if (!Project.webotsView)
@@ -110,90 +112,34 @@ export default class Project extends User {
   }
 
   runWebotsView(data, fallbackVersion) {
-    let that = this;
-    let reference;
-    const url = this.findGetParameter('url');
-    const mode = this.findGetParameter('mode');
-    const version = (fallbackVersion && fallbackVersion !== 'undefined') ? fallbackVersion :
-      (data ? data.version : this.findGetParameter('version'));
-    const src = 'https://cyberbotics.com/wwi/' + version + '/WebotsView.js';
+    const server = 'https://testing.webots.cloud/ajax/server/session.php?url=' + url;
+    const mode = 'x3d';
 
-    if (!data)
-      that._updateSimulationViewCount(url);
+    setupWebotsView(url);
 
-    let promise = new Promise((resolve, reject) => {
-      let script = document.getElementById('webots-view-version');
-
-      if (!script || (script && script.src !== src)) {
-        if (script && script.src !== src) {
-          script.remove();
-          window.location.reload();
-        }
-        script = document.createElement('script');
-        script.type = 'module';
-        script.id = 'webots-view-version';
-        script.src = src;
-        script.onload = () => {
-          if (data) {
-            reference = 'storage' + data.url.substring(data.url.lastIndexOf('/'));
-            that.setupWebotsView(data.duration > 0 ? 'animation' : 'scene', data);
-            if (data.duration > 0)
-              Project.webotsView.loadAnimation(`${reference}/scene.x3d`, `${reference}/animation.json`, false,
-                this._isMobileDevice(), `${reference}/thumbnail.jpg`);
-            else
-              Project.webotsView.loadScene(`${reference}/scene.x3d`, this._isMobileDevice(), `${reference}/thumbnail.jpg`);
-            resolve();
-          } else {
-            that.setupWebotsView('run');
-            let dotIndex = url.lastIndexOf('/') + 1;
-            let thumbnailUrl = (url.slice(0, dotIndex) + "." + url.slice(dotIndex)).replace('github.com', 'raw.githubusercontent.com').replace('/blob', '').replace('.wbt', '.jpg');
-            Project.webotsView.connect('https://' + window.location.hostname + '/ajax/server/session.php?url=' + url, mode,
-              false, undefined, 300, thumbnailUrl);
-            Project.webotsView.showQuit = false;
-            resolve();
-          }
-        };
-        script.onerror = () => {
-          console.warn(
-            'Could not find Webots version, reloading with R2022b instead. This could cause some unwanted behaviour.');
-          script.remove();
-          that.runWebotsView(data, 'R2022b') // if release not found, default to R2022b
-        };
-        document.body.appendChild(script);
-      } else if (data) {
-        reference = 'storage' + data.url.substring(data.url.lastIndexOf('/'));
-        that.setupWebotsView(data.duration > 0 ? 'animation' : 'scene', data);
-        if (data.duration > 0)
-          Project.webotsView.loadAnimation(`${reference}/scene.x3d`, `${reference}/animation.json`, false,
-            this._isMobileDevice(), `${reference}/thumbnail.jpg`);
-        else
-          Project.webotsView.loadScene(`${reference}/scene.x3d`, this._isMobileDevice(), `${reference}/thumbnail.jpg`);
-      } else {
-        that.setupWebotsView('run');
-        let dotIndex = url.lastIndexOf('/') + 1;
-        let thumbnailUrl = (url.slice(0, dotIndex) + "." + url.slice(dotIndex)).replace('github.com', 'raw.githubusercontent.com').replace('/blob', '').replace('.wbt', '.jpg');
-        Project.webotsView.connect('https://' + window.location.hostname + '/ajax/server/session.php?url=' + url, mode,
-          false, undefined, 300, thumbnailUrl);
-        Project.webotsView.showQuit = false;
-      }
+    return new Promise((resolve, reject) => {
+      let dotIndex = url.lastIndexOf('/') + 1;
+      let thumbnailUrl = (url.slice(0, dotIndex) + "." +url.slice(dotIndex)).replace('github.com',
+        'raw.githubusercontent.com').replace('/blob', '').replace('.wbt', '.jpg');
+      document.getElementById('webots-view').connect(server, mode, false, undefined, 300, thumbnailUrl);
+      document.getElementById('webots-view').showQuit = false;
+      resolve();
     });
 
-    promise.then(() => {
+    /* promise.then(() => {
       if (document.querySelector('#user-menu')) {
         if (that.email && that.password) {
           document.querySelector('#user-menu').style.display = 'auto';
           document.querySelector('#log-in').style.display = 'none';
-          document.querySelector('#sign-up').style.display = 'none';
           that.updateDisplayName();
         } else {
           document.querySelector('#user-menu').style.display = 'none';
           document.querySelector('#log-in').style.display = 'flex';
-          document.querySelector('#sign-up').style.display = 'flex';
         }
         if (that.email === '!')
           that.login();
       }
-    });
+    }); */
   }
 
   _isMobileDevice() {
