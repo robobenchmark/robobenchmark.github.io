@@ -30,7 +30,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function runPage(project) {
-    console.log(window.location.href);
     project.runWebotsView();
   }
 });
