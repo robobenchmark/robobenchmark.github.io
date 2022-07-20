@@ -1,12 +1,12 @@
 #VRML_SIM R2022b utf8
 
+EXTERNPROTO "../protos/MazeRunnerBenchmark.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/objects/backgrounds/protos/TexturedBackground.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/objects/lights/protos/CeilingLight.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/objects/tables/protos/Table.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/appearances/protos/VarnishedPine.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/samples/robotbenchmark/maze_runner/protos/MazeBlock.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/robots/mobsya/thymio/protos/Thymio2.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/samples/robotbenchmark/maze_runner/protos/MazeRunnerBenchmark.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/objects/floors/protos/Floor.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/objects/chairs/protos/WoodenChair.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/objects/apartment_structure/protos/Door.proto"

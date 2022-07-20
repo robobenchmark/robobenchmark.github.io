@@ -1,8 +1,8 @@
 #VRML_SIM R2022b utf8
 
+EXTERNPROTO "../protos/ObstacleAvoidanceBenchmark.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/objects/backgrounds/protos/TexturedBackground.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/robots/mobsya/thymio/protos/Thymio2.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/samples/robotbenchmark/obstacle_avoidance/protos/ObstacleAvoidanceBenchmark.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/objects/floors/protos/Floor.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/objects/toys/protos/PaperBoat.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/objects/balls/protos/SoccerBall.proto"

@@ -1,9 +1,9 @@
 #VRML_SIM R2022b utf8
 
+EXTERNPROTO "../protos/HumanoidMarathonBenchmark.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/objects/backgrounds/protos/TexturedBackground.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/robots/robotis/darwin-op/protos/RobotisOp2.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/samples/robotbenchmark/humanoid_marathon/protos/HumanoidMarathonBenchmark.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/appearances/protos/DryMud.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/objects/trees/protos/Tree.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/objects/road/protos/RoadIntersection.proto"
