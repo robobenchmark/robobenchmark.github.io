@@ -90,69 +90,25 @@ export default class User extends Router {
     });
 
     div.querySelector('a#log-in').addEventListener('click', function(event) {
-      event.preventDefault();
-      let content = {};
-      content.innerHTML =
-        `<div class="field">
-          <label class="label">E-mail</label>
-          <div class="control has-icons-left">
-            <input id="log-in-email" class="input" type="email" required placeholder="Enter your e-mail address">
-            <span class="icon is-small is-left">
-              <i class="fas fa-envelope"></i>
-            </span>
-          </div>
-        </div>
-        <div class="field">
-          <label class="label">Password</label>
-          <div class="control has-icons-left">
-            <input id="log-in-password" class="input" type="password" required>
-            <span class="icon is-small is-left">
-              <i class="fas fa-lock"></i>
-            </span>
-          </div>
-          <div class="has-text-right"><a id="log-in-forgot" class="help">Forgot your password?</a></div>
-        </div>
-        <p id="log-in-help" class="help"></p>`;
-
-      let modal = ModalDialog.run('Log in', content.innerHTML, 'Cancel', 'Log in');
-      modal.querySelector('#log-in-email').focus();
-      modal.querySelector('#log-in-forgot').addEventListener('click', function(event) {
-        modal.close();
-        let content = {};
-        content.innerHTML =
-          `<div class="field">
-            <label class="label">E-mail</label>
-            <div class="control has-icons-left">
-              <input id="forgot-email" class="input" type="email" required placeholder="Enter your e-mail address"
-              value="${modal.querySelector('#log-in-email').value}">
-              <span class="icon is-small is-left">
-                <i class="fas fa-envelope"></i>
-              </span>
-            </div>
-          </div>`;
-        let forgot = ModalDialog.run('Forgot your password?', content.innerHTML, 'Cancel', 'Reset Password');
-        forgot.querySelector('#forgot-email').focus();
-        forgot.querySelector('form').addEventListener('submit', function(event) {
-          event.preventDefault();
-          forgot.querySelector('button[type="submit"]').classList.add('is-loading');
-          that.forgotPassword(forgot.querySelector('#forgot-email').value, function() { forgot.close(); });
-        });
+      const url = 'https://github.com/login/oauth/authorize?' +
+        'client_id=5e8f1d24f69002cecd8d' +
+        '&state=1234' +
+        '&allow_signup=true';
+      let promise = new Promise((resolve, reject) => {
+        fetch('https://github.com/login/oauth/authorize', {method: 'get'})
+          .then(function(response) {
+            return response.json();
+          })
+          .then(function(data) {
+            if (data.error)
+              console.log(data.error);
+            else
+              resolve();
+          })
       });
-      modal.querySelector('form').addEventListener('submit', function(event) {
-        event.preventDefault();
-        let email = modal.querySelector('#log-in-email').value;
-        let password = modal.querySelector('#log-in-password').value;
-        that.email = email;
-        that.sha256Hash(password + that.title).then(function(hash) {
-          that.password = hash;
-          that.login(function(error) {
-            modal.querySelector('#log-in-help').innerHTML = error; // "Your e-mail or password is wrong, please try again.";
-          }, function(success) {
-            modal.close();
-          }, true);
-        });
-      });
+      return promise;
     });
+
     return div;
   }
 
