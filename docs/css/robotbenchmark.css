@@ -58,14 +58,6 @@ body {
   transition: all 0.3s ease-in-out;
 }
 
-/* .navbar > * > *:hover {
-  background-color: inherit;
-} */ 
-
-#log-in:hover {
-  background-color: #d9d9d9;
-}
-
 #navbar-logo {
   height: 1.5rem;
 }
