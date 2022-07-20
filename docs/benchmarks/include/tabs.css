@@ -1,12 +1,7 @@
 /* Inspired from https://codepen.io/Wendy-Ho/pen/MWWBvmd */
-html {
-  background: transparent;
-}
-
 body {
   font-family: arial, sans-serif;
   font-size: 10pt;
-  background: transparent;
 }
 
 p, h2, h3, code {
