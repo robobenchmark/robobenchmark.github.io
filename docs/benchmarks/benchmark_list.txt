@@ -1,5 +1,6 @@
 robot_programming//1//Learn how to program a robot, save your controller program, revert and run the simulation.//Thymio2
 obstacle_avoidance//2//Program a Thymio II robot to cross a classroom filled with obstacles as quickly as possible.//Thymio2
+maze_runner//2//Program a Thymio II robot to complete a maze without colliding with the walls.//Thymio2
 square_path//2//Program a Pioneer 3-DX robot to follow a 2m x 2m square trajectory, quickly and precisely.//Pioneer3dx
 inverted_pendulum//3//Program an e-puck robot to maintain an inverted pendulum up as long as possible.//E-Puck
 pick_and_place//3//Program a youBot mobile manipulator robot to pick and place a cube as quickly as possible.//Youbot
