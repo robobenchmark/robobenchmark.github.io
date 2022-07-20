@@ -25,7 +25,7 @@ WorldInfo {
     "move the box and place it on the target position."
   ]
   title "Pick and Place"
-  window "pick_and_place"
+  window "pick_and_place_benchmark"
   basicTimeStep 16
   contactProperties [
     ContactProperties {

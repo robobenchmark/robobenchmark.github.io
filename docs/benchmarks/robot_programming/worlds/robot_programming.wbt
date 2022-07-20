@@ -12,7 +12,7 @@ WorldInfo {
     "learn how to program a robot."
   ]
   title "Robot Programming"
-  window "robot_programming"
+  window "robot_programming_benchmark"
   basicTimeStep 20
   contactProperties [
     ContactProperties {

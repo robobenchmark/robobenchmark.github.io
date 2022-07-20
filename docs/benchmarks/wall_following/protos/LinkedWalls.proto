@@ -12,7 +12,7 @@ PROTO LinkedWalls [
   field SFFloat height 0.5
   field MFInt32 angles []
   field SFNode appearance NULL
-  field SFString window "wall_following"
+  field SFString window "wall_following_benchmark"
 ]
 {
   %<

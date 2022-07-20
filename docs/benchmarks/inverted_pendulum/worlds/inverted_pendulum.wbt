@@ -20,7 +20,7 @@ WorldInfo {
     "measure the simulation time "
   ]
   title "Inverted Pendulum"
-  window "inverted_pendulum"
+  window "inverted_pendulum_benchmark"
   physics "inverted_pendulum_perturbation"
   basicTimeStep 4
   lineScale 0.01

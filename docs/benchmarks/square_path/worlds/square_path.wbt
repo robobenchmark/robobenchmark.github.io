@@ -13,7 +13,7 @@ WorldInfo {
     "It can only rely on the sensors in its wheels to perform this task. "
   ]
   title "Square Path"
-  window "square_path"
+  window "square_path_benchmark"
   basicTimeStep 16
 }
 Viewpoint {

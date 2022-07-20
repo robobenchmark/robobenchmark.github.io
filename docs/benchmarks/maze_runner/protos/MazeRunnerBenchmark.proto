@@ -4,7 +4,7 @@
 # Supervisor of the maze runner benchmark.
 
 PROTO MazeRunnerBenchmark [
-  field SFString window "maze_runner"
+  field SFString window "maze_runner_benchmark"
 ]
 {
   Robot {

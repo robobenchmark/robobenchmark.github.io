@@ -5,7 +5,7 @@
 # Supervisor that manages the Pioneer square path benchmark.
 
 PROTO SquarePathBenchmark [
-  field SFString window "square_path"
+  field SFString window "square_path_benchmark"
 ]
 {
   Robot {

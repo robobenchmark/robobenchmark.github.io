@@ -5,7 +5,7 @@
 # Supervisor that manages the humanoid marathon benchmark.
 
 PROTO HumanoidMarathonBenchmark [
-  field SFString window "humanoid_marathon"
+  field SFString window "humanoid_marathon_benchmark"
 ]
 {
 Robot {

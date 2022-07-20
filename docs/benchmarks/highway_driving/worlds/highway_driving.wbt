@@ -31,7 +31,7 @@ WorldInfo {
     "All the sensors and actuators of the robot can be used to achieve the best performance. "
   ]
   title "Highway Driving"
-  window "highway_driving"
+  window "highway_driving_benchmark"
   ERP 0.6
   basicTimeStep 10
   lineScale 1

@@ -5,7 +5,7 @@
 # Supervisor of the robot programming benchmark.
 
 PROTO ObstacleAvoidanceBenchmark [
-  field SFString window "obstacle_avoidance"
+  field SFString window "obstacle_avoidance_benchmark"
 ]
 {
   Robot {

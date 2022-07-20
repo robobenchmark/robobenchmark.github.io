@@ -15,7 +15,7 @@ WorldInfo {
     "Records are stored on the challenge web site. "
   ]
   title "Humanoid Sprint"
-  window "humanoid_sprint"
+  window "humanoid_sprint_benchmark"
   basicTimeStep 20
   FPS 20
   contactProperties [

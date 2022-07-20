@@ -11,7 +11,7 @@ WorldInfo {
     "The BB-8 robot has to climb out of the pit."
   ]
   title "Pit Escape"
-  window "pit_escape"
+  window "pit_escape_benchmark"
 }
 Viewpoint {
   orientation 0.16302088391248715 0.274889731435117 -0.9475546564499173 1.206964932897147

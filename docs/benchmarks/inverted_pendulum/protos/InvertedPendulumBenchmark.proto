@@ -6,7 +6,7 @@
 
 PROTO InvertedPendulumBenchmark [
   field MFString controllerArgs [ "seed=2" ]
-  field SFString window "inverted_pendulum"
+  field SFString window "inverted_pendulum_benchmark"
 ]
 {
   Robot {

@@ -25,7 +25,7 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-mi
 
 WorldInfo {
   title "Humanoid Marathon"
-  window "humanoid_marathon"
+  window "humanoid_marathon_benchmark"
   basicTimeStep 16
 }
 Viewpoint {

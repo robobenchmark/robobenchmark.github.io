@@ -11,7 +11,7 @@ WorldInfo {
     "The Pioneer Robot has to follow the wall."
   ]
   title "Wall Following"
-  window "wall_following"
+  window "wall_following_benchmark"
   basicTimeStep 16
 }
 Viewpoint {

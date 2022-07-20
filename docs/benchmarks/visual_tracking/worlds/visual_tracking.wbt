@@ -12,7 +12,7 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-mi
 
 WorldInfo {
   title "Visual Tracking"
-  window "visual_tracking"
+  window "visual_tracking_benchmark"
 }
 Viewpoint {
   orientation 0.13130402135770297 0.5383246250250102 -0.8324457051766067 0.20483690433762317

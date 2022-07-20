@@ -5,7 +5,7 @@
 # Supervisor that manages the Pit Escape benchmark.
 
 PROTO PitEscapeBenchmark [
-  field SFString window "pit_escape"
+  field SFString window "pit_escape_benchmark"
 ]
 {
   Robot {

@@ -25,7 +25,7 @@ WorldInfo {
     "move to the center of the maze as quickly as possible."
   ]
   title "Maze Runner"
-  window "maze_runner"
+  window "maze_runner_benchmark"
   basicTimeStep 16
   FPS 50
   contactProperties [

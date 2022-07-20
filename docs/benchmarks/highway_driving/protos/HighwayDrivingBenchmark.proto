@@ -5,7 +5,7 @@
 # Supervisor that manages the highway driving benchmark.
 
 PROTO HighwayDrivingBenchmark [
-  field SFString window "highway_driving"
+  field SFString window "highway_driving_benchmark"
 ]
 {
   Robot {

@@ -22,7 +22,7 @@ WorldInfo {
     "cross a room filled with obstacles as quickly as possible."
   ]
   title "Obstacle Avoidance"
-  window "obstacle_avoidance"
+  window "obstacle_avoidance_benchmark"
   basicTimeStep 16
   contactProperties [
     ContactProperties {
