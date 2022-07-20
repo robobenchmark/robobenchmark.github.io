@@ -67,7 +67,7 @@ int main(int argc, char **argv) {
     const char *message;
     while ((message = wb_robot_wwi_receive_text())) {
       if (strncmp(message, "record:", 7) == 0) {
-        //robotbenchmark_record(message, "humanoid_marathon", distance);
+        robotbenchmark_record(message, "humanoid_marathon", distance);
         break;
       } else if (strcmp(message, "exit") == 0)
         break;

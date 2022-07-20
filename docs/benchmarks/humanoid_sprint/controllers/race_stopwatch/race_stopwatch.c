@@ -25,7 +25,7 @@
 #include <webots/plugins/robot_window/default.h>
 #include <webots/robot.h>
 #include <webots/supervisor.h>
-#include "../../../include/robotbenchmark.h"
+//#include "../../../include/robotbenchmark.h"
 
 #define N_DIGIT 6
 
@@ -126,7 +126,7 @@ int main(int argc, char *argv[]) {
     while ((message = wb_robot_wwi_receive_text())) {
       if (strncmp(message, "record:", 7) == 0) {
         // because the smallest record is the best, we send a negative value here
-        robotbenchmark_record(message, "humanoid_sprint", -record);
+        //robotbenchmark_record(message, "humanoid_sprint", -record);
         break;
       } else if (strcmp(message, "exit") == 0)
         break;
