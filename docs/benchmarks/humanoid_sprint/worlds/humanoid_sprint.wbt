@@ -1,11 +1,11 @@
 #VRML_SIM R2022b utf8
 
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackground.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/floors/protos/Floor.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/appearances/protos/Grass.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/robots/softbank/nao/protos/Nao.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/samples/robotbenchmark/humanoid_sprint/protos/RaceStopwatch.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/objects/floors/protos/Floor.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/appearances/protos/Grass.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/robots/softbank/nao/protos/Nao.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/samples/robotbenchmark/humanoid_sprint/protos/RaceStopwatch.proto"
 
 WorldInfo {
   info [
@@ -73,19 +73,19 @@ DEF TRACK Floor {
   appearance PBRAppearance {
     baseColorMap ImageTexture {
       url [
-        "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/samples/robotbenchmark/humanoid_sprint/worlds/textures/nao_10m_track_base_color.jpg"
+        "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/samples/robotbenchmark/humanoid_sprint/worlds/textures/nao_10m_track_base_color.jpg"
       ]
     }
     roughness 1
     roughnessMap ImageTexture {
       url [
-        "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/samples/robotbenchmark/humanoid_sprint/worlds/textures/nao_10m_track_roughness.jpg"
+        "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/samples/robotbenchmark/humanoid_sprint/worlds/textures/nao_10m_track_roughness.jpg"
       ]
     }
     metalness 0
     normalMap ImageTexture {
       url [
-        "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/samples/robotbenchmark/humanoid_sprint/worlds/textures/nao_10m_track_normal.jpg"
+        "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/samples/robotbenchmark/humanoid_sprint/worlds/textures/nao_10m_track_normal.jpg"
       ]
     }
   }
