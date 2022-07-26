@@ -1,20 +1,20 @@
 #VRML_SIM R2022b utf8
 
 EXTERNPROTO "../protos/ObstacleAvoidanceBenchmark.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/objects/backgrounds/protos/TexturedBackground.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/robots/mobsya/thymio/protos/Thymio2.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/objects/floors/protos/Floor.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/objects/toys/protos/PaperBoat.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/objects/balls/protos/SoccerBall.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/objects/tables/protos/Table.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/objects/chairs/protos/WoodenChair.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/objects/apartment_structure/protos/Door.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/objects/apartment_structure/protos/DoorLever.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/appearances/protos/Roughcast.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/objects/apartment_structure/protos/Window.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/objects/cabinet/protos/Cabinet.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/objects/school_furniture/protos/Blackboard.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/objects/school_furniture/protos/Clock.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/robots/mobsya/thymio/protos/Thymio2.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/floors/protos/Floor.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/toys/protos/PaperBoat.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/balls/protos/SoccerBall.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/tables/protos/Table.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/chairs/protos/WoodenChair.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/apartment_structure/protos/Door.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/apartment_structure/protos/DoorLever.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/appearances/protos/Roughcast.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/apartment_structure/protos/Window.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/cabinet/protos/Cabinet.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/school_furniture/protos/Blackboard.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/school_furniture/protos/Clock.proto"
 
 WorldInfo {
   info [
@@ -73,7 +73,7 @@ Floor {
   appearance PBRAppearance {
     baseColorMap ImageTexture {
       url [
-        "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/default/worlds/textures/square_block_parquetry.jpg"
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/default/worlds/textures/square_block_parquetry.jpg"
       ]
     }
     roughness 1
@@ -89,7 +89,7 @@ DEF BALL Solid {
         baseColor 0.8 0.8 0.8
         baseColorMap ImageTexture {
           url [
-            "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/beach_ball.jpg"
+            "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/beach_ball.jpg"
           ]
         }
         roughness 0.5
@@ -142,7 +142,7 @@ DEF CEILING Solid {
         baseColor 0.415686 0.647059 0.545098
         baseColorMap ImageTexture {
           url [
-            "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/wall.jpg"
+            "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/wall.jpg"
           ]
         }
         roughness 0.5
@@ -311,7 +311,7 @@ DEF A_BLOCK Solid {
         baseColor 0.8 0.8 0.8
         baseColorMap ImageTexture {
           url [
-            "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/letter_a.jpg"
+            "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/letter_a.jpg"
           ]
         }
         roughness 0.5
@@ -376,7 +376,7 @@ DEF A_BLOCK Solid {
         baseColor 0.8 0.8 0.8
         baseColorMap ImageTexture {
           url [
-            "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/letter_a.jpg"
+            "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/letter_a.jpg"
           ]
         }
         roughness 0.5
@@ -441,7 +441,7 @@ DEF A_BLOCK Solid {
         baseColor 0.8 0.8 0.8
         baseColorMap ImageTexture {
           url [
-            "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/letter_a.jpg"
+            "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/letter_a.jpg"
           ]
         }
         roughness 0.5
@@ -506,7 +506,7 @@ DEF A_BLOCK Solid {
         baseColor 0.8 0.8 0.8
         baseColorMap ImageTexture {
           url [
-            "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/letter_a.jpg"
+            "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/letter_a.jpg"
           ]
         }
         roughness 0.5
@@ -571,7 +571,7 @@ DEF A_BLOCK Solid {
         baseColor 0.8 0.8 0.8
         baseColorMap ImageTexture {
           url [
-            "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/letter_a.jpg"
+            "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/letter_a.jpg"
           ]
         }
         roughness 0.5
@@ -636,7 +636,7 @@ DEF B_BLOCK Solid {
         baseColor 0.8 0.8 0.8
         baseColorMap ImageTexture {
           url [
-            "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/letter_b.jpg"
+            "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/letter_b.jpg"
           ]
         }
         roughness 0.5
@@ -701,7 +701,7 @@ DEF B_BLOCK Solid {
         baseColor 0.8 0.8 0.8
         baseColorMap ImageTexture {
           url [
-            "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/letter_b.jpg"
+            "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/letter_b.jpg"
           ]
         }
         roughness 0.5
@@ -766,7 +766,7 @@ DEF B_BLOCK Solid {
         baseColor 0.8 0.8 0.8
         baseColorMap ImageTexture {
           url [
-            "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/letter_b.jpg"
+            "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/letter_b.jpg"
           ]
         }
         roughness 0.5
@@ -831,7 +831,7 @@ DEF W_BLOCK Solid {
         baseColor 0.8 0.8 0.8
         baseColorMap ImageTexture {
           url [
-            "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/letter_w.jpg"
+            "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/letter_w.jpg"
           ]
         }
         roughness 0.5
@@ -896,7 +896,7 @@ DEF W_BLOCK Solid {
         baseColor 0.8 0.8 0.8
         baseColorMap ImageTexture {
           url [
-            "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/letter_w.jpg"
+            "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/letter_w.jpg"
           ]
         }
         roughness 0.5
@@ -961,7 +961,7 @@ DEF W_BLOCK Solid {
         baseColor 0.8 0.8 0.8
         baseColorMap ImageTexture {
           url [
-            "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/letter_w.jpg"
+            "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/letter_w.jpg"
           ]
         }
         roughness 0.5
@@ -1028,7 +1028,7 @@ DEF CARPET Solid {
         baseColor 0.8 0.8 0.8
         baseColorMap ImageTexture {
           url [
-            "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/carpet.jpg"
+            "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/carpet.jpg"
           ]
         }
         roughness 1
@@ -1720,7 +1720,7 @@ DEF ART_WALL Solid {
         baseColor 0.8 0.8 0.8
         baseColorMap ImageTexture {
           url [
-            "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/art_banner.png"
+            "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/art_banner.png"
           ]
         }
         transparency 0.5
@@ -1744,7 +1744,7 @@ DEF WORLD_MAP_BANNER Solid {
         baseColor 0.8 0.8 0.8
         baseColorMap ImageTexture {
           url [
-            "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/world_map_text.png"
+            "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/world_map_text.png"
           ]
         }
         transparency 0.5
@@ -1768,7 +1768,7 @@ DEF ALPHABET_POSTER Solid {
         baseColor 0.8 0.8 0.8
         baseColorMap ImageTexture {
           url [
-            "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/alphabet.jpg"
+            "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/alphabet.jpg"
           ]
         }
         transparency 0.20000000298023224
@@ -1792,7 +1792,7 @@ DEF SHAPES_POSTER Solid {
         baseColor 0.8 0.8 0.8
         baseColorMap ImageTexture {
           url [
-            "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/shapes_poster.jpg"
+            "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/shapes_poster.jpg"
           ]
         }
         transparency 0.20000000298023224
@@ -1835,7 +1835,7 @@ DEF PINBOARD Solid {
         baseColor 0.3 0.3 0.3
         baseColorMap ImageTexture {
           url [
-            "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/cork.jpg"
+            "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/cork.jpg"
           ]
         }
         roughness 0.5
@@ -1863,7 +1863,7 @@ DEF PINBOARD Solid {
         baseColor 0.8 0.8 0.8
         baseColorMap ImageTexture {
           url [
-            "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/default/worlds/textures/wood.jpg"
+            "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/default/worlds/textures/wood.jpg"
           ]
         }
         roughness 0.5
@@ -1896,7 +1896,7 @@ DEF FIRST_DRAWING Solid {
         baseColor 0.8 0.8 0.8
         baseColorMap ImageTexture {
           url [
-            "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/first_drawing.jpg"
+            "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/first_drawing.jpg"
           ]
         }
         roughness 0.5
@@ -1948,7 +1948,7 @@ DEF SECOND_DRAWING Solid {
         baseColor 0.8 0.8 0.8
         baseColorMap ImageTexture {
           url [
-            "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/second_drawing.jpg"
+            "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/second_drawing.jpg"
           ]
         }
         roughness 0.5
@@ -2000,7 +2000,7 @@ DEF WORLD_MAP Solid {
         baseColor 0.8 0.8 0.8
         baseColorMap ImageTexture {
           url [
-            "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/world_map.jpg"
+            "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/world_map.jpg"
           ]
         }
         roughness 0.5
@@ -2022,7 +2022,7 @@ DEF COAT_PEGS Solid {
         baseColor 0.8 0.8 0.8
         baseColorMap ImageTexture {
           url [
-            "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/default/worlds/textures/lightwood.jpg"
+            "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/default/worlds/textures/lightwood.jpg"
           ]
         }
         roughness 0.5
@@ -2045,7 +2045,7 @@ DEF COAT_PEGS Solid {
         baseColor 0.8 0.8 0.8
         baseColorMap ImageTexture {
           url [
-            "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/default/worlds/textures/wood.jpg"
+            "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/default/worlds/textures/wood.jpg"
           ]
         }
         roughness 0.5
@@ -2196,7 +2196,7 @@ DEF PENCIL Solid {
         baseColor 0.8 0.8 0.8
         baseColorMap ImageTexture {
           url [
-            "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/pencil.jpg"
+            "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/pencil.jpg"
           ]
         }
         roughness 0.5
@@ -2251,7 +2251,7 @@ DEF PAINTBRUSH Solid {
         baseColor 0.8 0.8 0.8
         baseColorMap ImageTexture {
           url [
-            "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/paintbrush.jpg"
+            "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/paintbrush.jpg"
           ]
         }
         roughness 0.5
@@ -2308,7 +2308,7 @@ DEF CUBE_OBSTACLES Group {
             baseColor 0.8 0.8 0.8
             baseColorMap ImageTexture {
               url [
-                "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/letter_w.jpg"
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/letter_w.jpg"
               ]
             }
             roughness 0.5
@@ -2376,7 +2376,7 @@ DEF CUBE_OBSTACLES Group {
             baseColor 0.8 0.8 0.8
             baseColorMap ImageTexture {
               url [
-                "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/letter_a.jpg"
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/letter_a.jpg"
               ]
             }
             roughness 0.5
@@ -2444,7 +2444,7 @@ DEF CUBE_OBSTACLES Group {
             baseColor 0.8 0.8 0.8
             baseColorMap ImageTexture {
               url [
-                "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/letter_a.jpg"
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/letter_a.jpg"
               ]
             }
             roughness 0.5
@@ -2512,7 +2512,7 @@ DEF CUBE_OBSTACLES Group {
             baseColor 0.8 0.8 0.8
             baseColorMap ImageTexture {
               url [
-                "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/letter_w.jpg"
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/letter_w.jpg"
               ]
             }
             roughness 0.5
@@ -2580,7 +2580,7 @@ DEF CUBE_OBSTACLES Group {
             baseColor 0.8 0.8 0.8
             baseColorMap ImageTexture {
               url [
-                "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/letter_w.jpg"
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/letter_w.jpg"
               ]
             }
             roughness 0.5
@@ -2648,7 +2648,7 @@ DEF CUBE_OBSTACLES Group {
             baseColor 0.8 0.8 0.8
             baseColorMap ImageTexture {
               url [
-                "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/letter_b.jpg"
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/letter_b.jpg"
               ]
             }
             roughness 0.5
@@ -2716,7 +2716,7 @@ DEF CUBE_OBSTACLES Group {
             baseColor 0.8 0.8 0.8
             baseColorMap ImageTexture {
               url [
-                "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/letter_w.jpg"
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/letter_w.jpg"
               ]
             }
             roughness 0.5
@@ -2784,7 +2784,7 @@ DEF CUBE_OBSTACLES Group {
             baseColor 0.8 0.8 0.8
             baseColorMap ImageTexture {
               url [
-                "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/letter_b.jpg"
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/letter_b.jpg"
               ]
             }
             roughness 0.5
@@ -2852,7 +2852,7 @@ DEF CUBE_OBSTACLES Group {
             baseColor 0.8 0.8 0.8
             baseColorMap ImageTexture {
               url [
-                "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/letter_b.jpg"
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/letter_b.jpg"
               ]
             }
             roughness 0.5
@@ -2920,7 +2920,7 @@ DEF CUBE_OBSTACLES Group {
             baseColor 0.8 0.8 0.8
             baseColorMap ImageTexture {
               url [
-                "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/letter_a.jpg"
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/letter_a.jpg"
               ]
             }
             roughness 0.5
@@ -2988,7 +2988,7 @@ DEF CUBE_OBSTACLES Group {
             baseColor 0.8 0.8 0.8
             baseColorMap ImageTexture {
               url [
-                "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/letter_a.jpg"
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/letter_a.jpg"
               ]
             }
             roughness 0.5
@@ -3056,7 +3056,7 @@ DEF CUBE_OBSTACLES Group {
             baseColor 0.8 0.8 0.8
             baseColorMap ImageTexture {
               url [
-                "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/letter_w.jpg"
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/letter_w.jpg"
               ]
             }
             roughness 0.5
@@ -3125,7 +3125,7 @@ DEF CUBE_OBSTACLES Group {
             baseColor 0.8 0.8 0.8
             baseColorMap ImageTexture {
               url [
-                "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/letter_a.jpg"
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/samples/robotbenchmark/obstacle_avoidance/worlds/textures/letter_a.jpg"
               ]
             }
             roughness 0.5

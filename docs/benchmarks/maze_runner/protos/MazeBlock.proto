@@ -4,7 +4,7 @@
 # Block used to build walls of the maze.
 # template language: javascript
 
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/appearances/protos/RoughPine.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/appearances/protos/RoughPine.proto"
 
 PROTO MazeBlock [
   field SFVec3f translation 0 0 0
