@@ -61,7 +61,7 @@ export default class User extends Router {
     div.innerHTML =
       `<div class="navbar-item">
         <div class="buttons">
-          <a class="button is-small is-primary" id="log-in">
+          <a class="button is-small is-primary is-light" id="log-in" style="background-color: transparent">
             <span class="icon">
               <i class="fab fa-lg fa-github"></i>
             </span>
