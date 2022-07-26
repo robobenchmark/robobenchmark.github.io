@@ -10,6 +10,16 @@ export default class Benchmarks {
     document.addEventListener('click', this.benchmarkClickEvent.bind(this));
 
     function benchmarksPage() {
+      const code = new URL(document.location.href).searchParams.get('code') ?
+        (new URL(document.location.href).searchParams.get('code')).toString() : false;
+      const state = new URL(document.location.href).searchParams.get('state') ?
+        (new URL(document.location.href).searchParams.get('state')).toString() : false;
+
+      if (code && state) {
+        console.log('code: ' + code);
+        console.log('state: ' + state);
+      }
+
       const template = document.createElement('template');
       template.innerHTML =
         `<section class="section is-small">

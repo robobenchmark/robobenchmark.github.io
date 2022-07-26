@@ -6,7 +6,10 @@ export default class User extends Router {
     super(title, footer, routes);
     this.routes.push({url: '/settings', setup: settingsPage});
     let that = this;
-    this.loogedIn = false;
+    this.loggedIn = false;
+    this.state = (Math.random() + 1).toString(36).substring(2);
+    this.clientId = '5e8f1d24f69002cecd8d';
+    this.allowSignUp = 'true';
 
     function settingsPage() {
       if (!that.loggedIn)
@@ -57,17 +60,20 @@ export default class User extends Router {
     let div = document.createElement('div');
     div.setAttribute('class', 'navbar-end');
 
+    let githubOAuth = 'https://github.com/login/oauth/authorize?' +
+      'client_id=' + this.clientId + 
+      '&state=' + this.state +
+      '&allow_signup=' + this.allowSignUp;
+
     const name = 'Username';
     div.innerHTML =
       `<div class="navbar-item">
-        <div class="buttons">
-          <a class="button is-small is-primary is-light" id="log-in" style="background-color: transparent">
-            <span class="icon">
-              <i class="fab fa-lg fa-github"></i>
-            </span>
-            <span>Log in</span>
-          </a>
-        </div>
+        <a class="button is-small" id="log-in" href="${githubOAuth}">
+          <span class="icon">
+            <i class="fab fa-lg fa-github"></i>
+          </span>
+          <span>Log in</span>
+        </a>
       </div>
       <div id="user-menu" class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link" id="email"><span name="displayName">${name}</span> &nbsp; <img src="docs/images/profile.png"></a>
