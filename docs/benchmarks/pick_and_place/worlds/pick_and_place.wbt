@@ -1,23 +1,23 @@
 #VRML_SIM R2022b utf8
 
 EXTERNPROTO "../protos/PickAndPlaceBenchmark.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/objects/backgrounds/protos/TexturedBackground.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/objects/floors/protos/Floor.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/appearances/protos/CorrugatedMetal.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/objects/apartment_structure/protos/Ceiling.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/objects/apartment_structure/protos/Door.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/objects/apartment_structure/protos/DoorLever.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/objects/factory/valves/protos/LeverValve.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/objects/factory/pipes/protos/PipeSection.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/objects/factory/pipes/protos/LJoint.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/objects/factory/pipes/protos/TJoint.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/objects/factory/pallet/protos/WoodenPalletStack.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/objects/factory/containers/protos/WoodenBox.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/appearances/protos/BrushedAluminium.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/objects/factory/tools/protos/PlatformCart.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/robots/kuka/youbot/protos/KukaBox.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/robots/kuka/youbot/protos/Youbot.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/master/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/master/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/master/projects/objects/floors/protos/Floor.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/master/projects/appearances/protos/CorrugatedMetal.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/master/projects/objects/apartment_structure/protos/Ceiling.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/master/projects/objects/apartment_structure/protos/Door.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/master/projects/objects/apartment_structure/protos/DoorLever.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/master/projects/objects/factory/valves/protos/LeverValve.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/master/projects/objects/factory/pipes/protos/PipeSection.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/master/projects/objects/factory/pipes/protos/LJoint.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/master/projects/objects/factory/pipes/protos/TJoint.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/master/projects/objects/factory/pallet/protos/WoodenPalletStack.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/master/projects/objects/factory/containers/protos/WoodenBox.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/master/projects/appearances/protos/BrushedAluminium.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/master/projects/objects/factory/tools/protos/PlatformCart.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/master/projects/robots/kuka/youbot/protos/KukaBox.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/master/projects/robots/kuka/youbot/protos/Youbot.proto"
 
 WorldInfo {
   info [
@@ -84,7 +84,7 @@ Floor {
   appearance PBRAppearance {
     baseColorMap ImageTexture {
       url [
-        "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/samples/robotbenchmark/pick_and_place/worlds/textures/concrete.jpg"
+        "https://raw.githubusercontent.com/cyberbotics/webots/master/projects/samples/robotbenchmark/pick_and_place/worlds/textures/concrete.jpg"
       ]
     }
     roughness 1
@@ -274,7 +274,7 @@ DEF CONVEYOR_BELT Robot {
           appearance PBRAppearance {
             baseColorMap ImageTexture {
               url [
-                "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/samples/robotbenchmark/pick_and_place/worlds/textures/conveyor_belt_rubber.jpg"
+                "https://raw.githubusercontent.com/cyberbotics/webots/master/projects/samples/robotbenchmark/pick_and_place/worlds/textures/conveyor_belt_rubber.jpg"
               ]
             }
             roughness 1
@@ -530,7 +530,7 @@ DEF MACHINERY Solid {
           appearance PBRAppearance {
             baseColorMap ImageTexture {
               url [
-                "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/samples/robotbenchmark/pick_and_place/worlds/textures/factory_logo.png"
+                "https://raw.githubusercontent.com/cyberbotics/webots/master/projects/samples/robotbenchmark/pick_and_place/worlds/textures/factory_logo.png"
               ]
             }
           }
@@ -660,7 +660,7 @@ PlatformCart {
                   appearance DEF CUBE_BOX_APPEARANCE PBRAppearance {
                     baseColorMap ImageTexture {
                       url [
-                        "https://raw.githubusercontent.com/cyberbotics/webots/enhance-add-missing-window-fields/projects/samples/robotbenchmark/pick_and_place/worlds/textures/cardboard.jpg"
+                        "https://raw.githubusercontent.com/cyberbotics/webots/master/projects/samples/robotbenchmark/pick_and_place/worlds/textures/cardboard.jpg"
                       ]
                     }
                     roughness 1
