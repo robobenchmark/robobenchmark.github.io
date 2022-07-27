@@ -104,6 +104,7 @@ export default class Router {
         page = window.location.pathname + window.location.search + window.location.hash;
       that.resetNavbar();
       const url = new URL(window.location.origin + page);
+      console.log(url.href);
       if (url.pathname === '/404.php') {
         that.notFound();
         resolve();
@@ -113,7 +114,7 @@ export default class Router {
           const route = that.routes[i];
           if (url.pathname === route.url) {
             if (pushHistory)
-              window.history.pushState(null, name, url.pathname + url.search + url.hash);
+              window.history.pushState(null, '', url.pathname + url.search + url.hash);
             route.setup(that);
             found = true;
             resolve();
@@ -135,7 +136,7 @@ export default class Router {
     let promise = new Promise((resolve, reject) => {
       that.notFound();
       if (pushHistory)
-        window.history.pushState(null, name, url.pathname + url.search + url.hash);
+        window.history.pushState(null, '', url.pathname + url.search + url.hash);
       resolve();
     });
     return promise;
@@ -144,7 +145,7 @@ export default class Router {
   notFound() {
     const pathname = window.location.pathname;
     const url = window.location.origin + pathname;
-    window.history.pushState(null, '404 Not Found', url);
+    window.history.pushState(null, '', url);
     const hostname = document.location.hostname;
     let template = document.createElement('template');
     template.innerHTML =

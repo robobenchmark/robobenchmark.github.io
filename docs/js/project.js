@@ -63,7 +63,7 @@ export default class Project extends User {
             pushUrl = url.pathname + url.hash;
           }
           if (pushHistory)
-            window.history.pushState(null, name, pushUrl);
+            window.history.pushState(null, '', pushUrl);
           if (data.error) { // no such animation
             that.notFound();
             resolve();
