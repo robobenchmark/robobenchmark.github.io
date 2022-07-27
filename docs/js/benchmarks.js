@@ -28,9 +28,7 @@ export default class Benchmarks {
           state: that.project.state
         };
 
-        console.log(data);
-
-        fetch('https://github.com/login/oauth/access_token', {
+        fetch('https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token', {
           method: 'POST',
           headers: { 'Accept': 'application/json' },
           body: JSON.stringify(data),
