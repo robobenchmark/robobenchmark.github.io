@@ -1,3 +1,0 @@
-publish: true
-type: benchmark
-dockerCompose:theia:webots-project/controllers/inverted_pendulum/

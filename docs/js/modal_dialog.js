@@ -1,5 +1,5 @@
 export default class ModalDialog extends HTMLElement {
-  constructor(title, text, close = 'Ok', action = '', actionType = 'is-primary') {
+  constructor(title, text, close = 'Ok', action = '', actionType = 'is-success') {
     super();
     this.classList.add('modal');
     let actionButton, closeClass;
@@ -7,7 +7,7 @@ export default class ModalDialog extends HTMLElement {
       actionButton = `<button class="button ${actionType}" type="submit">${action}</button> `;
       closeClass = '';
     } else {
-      closeClass = ` is-primary`;
+      closeClass = ` is-success`;
       actionButton = '';
     }
     this.innerHTML =
@@ -30,7 +30,6 @@ export default class ModalDialog extends HTMLElement {
         </form>`;
     document.querySelector('body').appendChild(this);
   }
-
   connectedCallback() {
     document.querySelector('html').classList.add('is-clipped');
     this.classList.add('is-active');
@@ -46,34 +45,30 @@ export default class ModalDialog extends HTMLElement {
     this.querySelector('button.cancel').addEventListener('click', ModalDialog.closeEvent);
     this.querySelector('.modal-background').addEventListener('click', ModalDialog.closeEvent);
   }
-
   static closeEvent(event) {
     if (event.type === 'click' || (event.type === 'keydown' && event.keyCode === 27)) {
       event.preventDefault();
       ModalDialog.current.close();
     }
   }
-
   close() {
     document.querySelector('html').classList.remove('is-clipped');
     document.removeEventListener('keydown', ModalDialog.closeEvent);
     ModalDialog.current = null;
     this.remove();
   }
-
   error(message) {
     this.querySelector('.modal-card-foot div').innerHTML = message;
     let submit = this.querySelector('button[type="submit"]');
     if (submit)
       submit.classList.remove('is-loading');
   }
-  static run(title, text, close = 'Ok', action = '', actionType = 'is-primary') {
+  static run(title, text, close = 'Ok', action = '', actionType = 'is-success') {
     return new ModalDialog(title, text, close, action, actionType);
   }
 }
-
 ModalDialog.current = null;
 
 document.addEventListener('DOMContentLoaded', function() {
-  window.customElements.define('modal-dialog', ModalDialog);
+  window.customElements.define('modal-dialog', ModalDialog); // define web component
 });

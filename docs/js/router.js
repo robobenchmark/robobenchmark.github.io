@@ -5,57 +5,44 @@ export default class Router {
     this.content.id = 'main-container';
     this.routes = routes;
     const body = document.querySelector('body');
+    const scrollableBody = document.getElementById('scrollable-body');
     body.classList.add('has-navbar-fixed-top');
     this.resetNavbar();
-    body.prepend(footer);
-    body.prepend(this.content);
+    scrollableBody.append(this.content);
+    scrollableBody.append(footer);
     let that = this;
-
-    /* document.addEventListener('scroll', function(event) {
-      if (window.scrollY == 0 && document.querySelector('.navbar').classList.contains('is-dark')) {
-        document.querySelector('.navbar').classList.toggle('is-dark');
-        document.querySelector('.navbar').classList.toggle('is-light');
-        document.getElementById('navbar-logo').src = 'docs/images/robotbenchmark-logo-black-eyes.svg';
-      } else if (document.querySelector('.navbar').classList.contains('is-light')) {
-        document.querySelector('.navbar').classList.toggle('is-dark');
-        document.querySelector('.navbar').classList.toggle('is-light');
-        document.getElementById('navbar-logo').src = 'docs/images/robotbenchmark-logo-white-eyes.svg';
-      }
-    }); */
-
+    // Catch clicks on the root-level element.
     body.addEventListener('click', function(event) {
       let element = event.target;
       if (element.tagName !== 'A' && element.parentElement.tagName === 'A')
         element = element.parentElement;
-      if (element.tagName === 'A' && element.href && event.button === 0) {
+      if (element.tagName === 'A' && element.href && event.button === 0) { // left click on an <a href=...>
         if (element.origin === document.location.origin &&
             (element.pathname !== document.location.pathname || document.location.hash === element.hash ||
               element.hash === '')) {
-          event.preventDefault();
+          // same-origin navigation: a link within the site (we are skipping linking to the same page with possibly hashtags)
+          event.preventDefault(); // prevent the browser from doing the navigation
           that.load(element.pathname + element.search + element.hash);
           if (element.hash === '')
-            body.scrollTo(0, 0);
+            document.getElementById('scrollable-body').scrollTo(0, 0);
         }
       }
     });
-
     window.onpopstate = function(event) {
-      that.load(document.location.pathname + document.location.hash, false);
+      that.load(document.location.pathname + document.location.search + document.location.hash, false);
       event.preventDefault();
     };
   }
-
   resetNavbar() {
     let navbar = document.querySelector('.navbar');
     if (navbar)
       document.body.removeChild(navbar);
     let template = document.createElement('template');
     template.innerHTML =
-      `<nav id="navbar" class="navbar is-dark is-fixed-top">
+      `<nav id="navbar" class="navbar is-info is-fixed-top" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-          <a class="navbar-item is-size-5" id="navbar-home" href="/" style="margin-right: 30px;">
-            <img src="docs/images/robotbenchmark-logo-white.svg" id="navbar-logo"/>&ensp;
-              <strong>robot</strong><span class="has-text-primary">benchmark</span>
+          <a class="navbar-item" href="/">
+            <img src="https://cyberbotics.com/assets/images/webots.png" /> &nbsp; ${this.title}
           </a>
           <a class="navbar-burger burger" data-target="router-navbar">
             <span></span>
@@ -65,12 +52,6 @@ export default class Router {
         </div>
         <div id="router-navbar" class="navbar-menu">
           <div class="navbar-start">
-            <a class="navbar-item" href="/benchmarks">
-              Benchmarks
-            </a>
-            <a class="navbar-item" href="/about">
-              About
-            </a>
           </div>
           <div class="navbar-end">
           </div>
@@ -78,25 +59,17 @@ export default class Router {
       </nav>`;
     document.body.prepend(template.content.firstChild);
 
+    // navbar-burger
     const navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
     if (navbarBurgers.length > 0) {
-      navbarBurgers.forEach(element => {
-        element.addEventListener('click', () => {
-          element.classList.toggle('is-active');
-          document.getElementById(element.dataset.target).classList.toggle('is-active');
+      navbarBurgers.forEach(el => {
+        el.addEventListener('click', () => {
+          el.classList.toggle('is-active');
+          document.getElementById(el.dataset.target).classList.toggle('is-active');
         });
       });
     }
-
-    document.getElementById('navbar-home').addEventListener('mouseover', function(e) {
-      document.getElementById('navbar-logo').src = 'docs/images/robotbenchmark-logo-white-eyes.svg';
-    });
-  
-    document.getElementById('navbar-home').addEventListener('mouseout', function(e) {
-      document.getElementById('navbar-logo').src = 'docs/images/robotbenchmark-logo-white.svg';
-    });
   }
-
   load(page = null, pushHistory = true) {
     let that = this;
     let promise = new Promise((resolve, reject) => {
@@ -130,7 +103,6 @@ export default class Router {
     });
     return promise;
   }
-
   dynamicPage(url, pushHistory) {
     let that = this;
     let promise = new Promise((resolve, reject) => {
@@ -141,7 +113,6 @@ export default class Router {
     });
     return promise;
   }
-
   notFound() {
     const pathname = window.location.pathname;
     const url = window.location.origin + pathname;
@@ -160,9 +131,12 @@ export default class Router {
       </section>`;
     this.setup('page not found', [], template.content);
   }
-
   setup(title, anchors, content, fullpage = false) {
     document.head.querySelector('#title').innerHTML = this.title + ' - ' + title;
+    let menu = '';
+    for (let i = 0; i < anchors.length; i++)
+      menu += `<a class="navbar-item" href="#${anchors[i].toLowerCase()}">${anchors[i]}</a>`;
+    document.body.querySelector('.navbar-start').innerHTML = menu;
     this.content.innerHTML = '';
     NodeList.prototype.forEach = Array.prototype.forEach;
     let that = this;
@@ -171,5 +145,18 @@ export default class Router {
         that.content.appendChild(item);
       });
     }
+    if (fullpage) {
+      document.querySelector('footer').style.display = 'none';
+      document.querySelector('body nav').style.display = 'none';
+      document.querySelector('body').classList.remove('has-navbar-fixed-top');
+    } else {
+      document.querySelector('footer').style.display = 'auto';
+      document.querySelector('body nav').style.display = 'auto';
+      document.querySelector('body').classList.add('has-navbar-fixed-top');
+    }
+  }
+  isMobileDevice() {
+    // https://stackoverflow.com/questions/11381673/detecting-a-mobile-browser
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
   }
 }
