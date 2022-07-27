@@ -65,10 +65,10 @@ export default class Router {
         </div>
         <div id="router-navbar" class="navbar-menu">
           <div class="navbar-start">
-            <a class="navbar-item" href="benchmarks">
+            <a class="navbar-item" href="/benchmarks">
               Benchmarks
             </a>
-            <a class="navbar-item" href="about">
+            <a class="navbar-item" href="/about">
               About
             </a>
           </div>
