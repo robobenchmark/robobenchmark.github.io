@@ -15,9 +15,35 @@ export default class Benchmarks {
       const state = new URL(document.location.href).searchParams.get('state') ?
         (new URL(document.location.href).searchParams.get('state')).toString() : false;
 
-      if (code && state) {
-        console.log('code: ' + code);
-        console.log('state: ' + state);
+      if (code && state && !that.project.loggedIn) {
+        that.project.code = code;
+        that.project.state = state;
+        console.log('code: ' + that.project.code);
+        console.log('state: ' + that.project.state);
+
+        const data = {
+          client_id: that.project.clientId, 
+          client_secret: that.project.clientSecret,
+          code: that.project.code,
+          state: that.project.state
+        };
+
+        console.log(data);
+
+        fetch('https://github.com/login/oauth/access_token', {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: JSON.stringify(data),
+        })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log('Success:', data);
+        })
+        .catch((error) => {
+          console.log('Error:', error);
+        });
+
+        that.project.load('/');
       }
 
       const template = document.createElement('template');

@@ -9,6 +9,7 @@ export default class User extends Router {
     this.loggedIn = false;
     this.state = (Math.random() + 1).toString(36).substring(2);
     this.clientId = '5e8f1d24f69002cecd8d';
+    this.clientSecret = '3dab00fa144d2ad0ff014548ee491f9207f300cb';
     this.allowSignUp = 'true';
 
     function settingsPage() {
@@ -93,26 +94,6 @@ export default class User extends Router {
         that.load('/');
       else
         that.load();
-    });
-
-    div.querySelector('a#log-in').addEventListener('click', function(event) {
-      const url = 'https://github.com/login/oauth/authorize?' +
-        'client_id=5e8f1d24f69002cecd8d' +
-        '&state=1234' +
-        '&allow_signup=true';
-      let promise = new Promise((resolve, reject) => {
-        fetch('https://github.com/login/oauth/authorize', {method: 'get'})
-          .then(function(response) {
-            return response.json();
-          })
-          .then(function(data) {
-            if (data.error)
-              console.log(data.error);
-            else
-              resolve();
-          })
-      });
-      return promise;
     });
 
     return div;
