@@ -1,5 +1,4 @@
 import Project from './project.js';
-import ModalDialog from './modal_dialog.js';
 
 document.addEventListener('DOMContentLoaded', function() {
   Project.run('robotbenchmark', footer(), [{ url: '/run', setup: runPage }]);

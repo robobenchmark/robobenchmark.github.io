@@ -51,12 +51,13 @@ body {
   /* box-shadow: 0 -20px 20px 30px #363636; */
 }
 
-/* #navbar-home {
-  transition: all 0.3s ease-in-out;
-} */
+#navbar, #navbar-home {
+  transition: all 0.4s ease-in-out;
+}
 
 #navbar-logo {
   height: 1.5rem;
+  transition: all 0.4s ease-in-out;
 }
 
 #log-in {
@@ -71,6 +72,13 @@ body {
 #log-in:hover {
   background-color: rgba(0, 209, 178, 0.2);
   color: #fefefe;
+}
+
+#avatar {
+  height: 25px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 /*  Footer  */
@@ -147,11 +155,10 @@ body {
 /* Other */
 
 .is-vertically-centered {
+  margin: 0;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  margin: 0;
-  width: inherit;
 }
 
 .is-regular {
@@ -170,4 +177,16 @@ body {
 
 .align-row-vertically {
   vertical-align: middle; 
+}
+
+.more-circle {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70px;
+  height: 35px;
+  background-color: white;
+  /* background-color: #00d1b2; */
+  border-top-left-radius: 35px;
+  border-top-right-radius: 35px;
 }

@@ -11,7 +11,7 @@ export default class Router {
     body.prepend(this.content);
     let that = this;
 
-    /* document.addEventListener('scroll', function(event) {
+    document.addEventListener('scroll', function(event) {
       if (window.scrollY == 0 && document.querySelector('.navbar').classList.contains('is-dark')) {
         document.querySelector('.navbar').classList.toggle('is-dark');
         document.querySelector('.navbar').classList.toggle('is-light');
@@ -21,7 +21,7 @@ export default class Router {
         document.querySelector('.navbar').classList.toggle('is-light');
         document.getElementById('navbar-logo').src = 'docs/images/robotbenchmark-logo-white-eyes.svg';
       }
-    }); */
+    });
 
     body.addEventListener('click', function(event) {
       let element = event.target;

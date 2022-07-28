@@ -3,50 +3,32 @@ export default class Benchmarks {
     this.routes = routes;
     this.project = project;
     let that = this;
-
     this.routes.push({ url: '/benchmarks', setup: benchmarksPage });
-    this.routes.push({ url: '/', setup: benchmarksPage });
 
     document.addEventListener('click', this.benchmarkClickEvent.bind(this));
 
     function benchmarksPage() {
-      const code = new URL(document.location.href).searchParams.get('code') ?
-        (new URL(document.location.href).searchParams.get('code')).toString() : false;
-      const state = new URL(document.location.href).searchParams.get('state') ?
-        (new URL(document.location.href).searchParams.get('state')).toString() : false;
-
-      if (code && state && !that.project.loggedIn) {
-        that.project.code = code;
-        that.project.state = state;
-        console.log('code: ' + that.project.code);
-        console.log('state: ' + that.project.state);
-
-        const data = {
-          client_id: that.project.clientId, 
-          client_secret: that.project.clientSecret,
-          code: that.project.code,
-          state: that.project.state
-        };
-
-        fetch('https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data),
-        })
-        .then((response) => response.json())
-        .then((data) => {
-          console.log('Success:', data);
-        })
-        .catch((error) => {
-          console.log('Error:', error);
-        });
-
-        that.project.load('/');
-      }
-
       const template = document.createElement('template');
       template.innerHTML =
-        `<section class="section is-small">
+        `<section class="hero is-medium is-light">
+        <div class="hero-body">
+          <div class="container title-container">
+            <figure class="image is-64x64" style="margin-right: 15px; margin-top: 7px;">
+              <img src="docs/images/robotbenchmark-logo-black-eyes.svg" id="title-logo"/>
+            </figure>
+            <div class="title-text">
+              <p class="title is-size-1 is-regular">
+                Benchmarks
+              </p>
+              <p class="subtitle is-size-4">
+                <strong>robot</strong><a class="is-unselectable is-regular has-text-primary">benchmark</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+        <section class="section is-small">
           <table class="table mx-auto" style="min-width: 700px">
             <thead>
               <tr>
