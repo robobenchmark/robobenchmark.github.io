@@ -4,14 +4,14 @@ export default class Home {
     this.routes = routes;
     this.project = project;
     let that = this;
-    this.routes.push({ url: '/', setup: homePage });
+    this.routes.push({ url: '/home', setup: homePage });
 
     function homePage() {
       that.logIn();
 
       const template = document.createElement('template');
       template.innerHTML =
-        `<section class="hero is-halfheight is-light">
+        `<section class="hero is-fullheight is-light">
           <div class="hero-body">
             <div class="container title-container" style="transform: translateX(20%) scale(1.5);">
               <figure class="image is-64x64" style="top: 6px; margin-right: 15px;">
@@ -27,8 +27,35 @@ export default class Home {
               </div>
             </div>
           </div>
-          <div class="more-circle"><div>
-        </section>`
+          <div class="more-circle">
+            <i class="fas fa-xl fa-angles-down" style="color: #f5f5f5; animation: scale-animation 3s infinite;"></i>
+          <div>
+        </section>
+        
+        <div class="container is-max-widescreen">
+          <section class="section">
+            <div class="tile is-ancestor">
+              <div class="tile is-parent">
+                <article class="tile is-child box">
+                  <p class="title">Program</p>
+                  <p class="subtitle">Program simulated robots online</p>
+                </article>
+              </div>
+              <div class="tile is-parent">
+                <article class="tile is-child box">
+                  <p class="title">Compare</p>
+                  <p class="subtitle">Compare your performance to the best</p>
+                </article>
+              </div>
+              <div class="tile is-parent">
+                <article class="tile is-child box">
+                  <p class="title">Share</p>
+                  <p class="subtitle">Share your achievements</p>
+                </article>
+              </div>
+            </div>
+          </section>
+        </div>`;
       project.setup('home', [], template.content);
     }
   }

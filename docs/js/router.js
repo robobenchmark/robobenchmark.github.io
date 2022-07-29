@@ -15,11 +15,11 @@ export default class Router {
       if (window.scrollY == 0 && document.querySelector('.navbar').classList.contains('is-dark')) {
         document.querySelector('.navbar').classList.toggle('is-dark');
         document.querySelector('.navbar').classList.toggle('is-light');
-        document.getElementById('navbar-logo').src = 'docs/images/robotbenchmark-logo-black-eyes.svg';
+        document.getElementById('navbar-logo').src = 'docs/images/robotbenchmark-logo-black.svg';
       } else if (document.querySelector('.navbar').classList.contains('is-light')) {
         document.querySelector('.navbar').classList.toggle('is-dark');
         document.querySelector('.navbar').classList.toggle('is-light');
-        document.getElementById('navbar-logo').src = 'docs/images/robotbenchmark-logo-white-eyes.svg';
+        document.getElementById('navbar-logo').src = 'docs/images/robotbenchmark-logo-white.svg';
       }
     });
 
@@ -51,10 +51,10 @@ export default class Router {
       document.body.removeChild(navbar);
     let template = document.createElement('template');
     template.innerHTML =
-      `<nav id="navbar" class="navbar is-dark is-fixed-top">
+      `<nav id="navbar" class="navbar is-light is-fixed-top">
         <div class="navbar-brand">
           <a class="navbar-item is-size-5" id="navbar-home" href="/" style="margin-right: 30px;">
-            <img src="docs/images/robotbenchmark-logo-white.svg" id="navbar-logo"/>&ensp;
+            <img src="docs/images/robotbenchmark-logo-black.svg" id="navbar-logo"/>&ensp;
               <strong>robot</strong><span class="has-text-primary">benchmark</span>
           </a>
           <a class="navbar-burger burger" data-target="router-navbar">
@@ -89,11 +89,13 @@ export default class Router {
     }
 
     document.getElementById('navbar-home').addEventListener('mouseover', function(e) {
-      document.getElementById('navbar-logo').src = 'docs/images/robotbenchmark-logo-white-eyes.svg';
+      const hoverImage = document.getElementById('navbar-logo').src.replace('.svg', '-eyes.svg');
+      document.getElementById('navbar-logo').src = hoverImage;
     });
   
     document.getElementById('navbar-home').addEventListener('mouseout', function(e) {
-      document.getElementById('navbar-logo').src = 'docs/images/robotbenchmark-logo-white.svg';
+      const image = document.getElementById('navbar-logo').src.replace('-eyes.svg', '.svg');
+      document.getElementById('navbar-logo').src = image;
     });
   }
 
@@ -170,5 +172,10 @@ export default class Router {
         that.content.appendChild(item);
       });
     }
+  }
+
+  isMobileDevice() {
+    // https://stackoverflow.com/questions/11381673/detecting-a-mobile-browser
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
   }
 }
