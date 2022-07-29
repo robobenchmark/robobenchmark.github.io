@@ -7,7 +7,7 @@
    width="136"
    height="168"
    viewBox="0 0 136 168"
-   sodipodi:docname="robotbenchmark-logo-white-eyes-black.png"
+   sodipodi:docname="robotbenchmark-logo-white-eyes-black.svg"
    inkscape:version="1.2 (1:1.2+202206011327+fc4e4096c5)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -26,8 +26,8 @@
      inkscape:deskcolor="#505050"
      showgrid="false"
      inkscape:zoom="3.5776236"
-     inkscape:cx="38.852606"
-     inkscape:cy="72.254667"
+     inkscape:cx="38.992364"
+     inkscape:cy="72.534182"
      inkscape:window-width="1848"
      inkscape:window-height="1016"
      inkscape:window-x="72"
@@ -47,9 +47,10 @@
        y="15.382523" />
     <path
        id="rect461"
-       style="fill:#ffffff;stroke-width:1.00341;fill-opacity:1"
-       d="M 9 0 L 9 -55 L 127 -55 L 127 0 L 9 0 z M 25.949219 -18 L 53.949219 -18 L 53.949219 -37 L 25.949219 -37 L 25.949219 -18 z M 81.550781 -18 L 109.55078 -18 L 109.55078 -37 L 81.550781 -37 L 81.550781 -18 z "
-       transform="scale(1,-1)" />
+       style="fill:#ffffff;fill-opacity:1;stroke-width:1.00341"
+       d="M 9,0 V -55 H 127 V 0 Z M 25.949219,-16 H 55.949 V -39 H 25.949219 Z M 79.551,-16 h 29.99978 V -39 H 79.551 Z"
+       transform="scale(1,-1)"
+       sodipodi:nodetypes="ccccccccccccccc" />
     <rect
        style="fill:#ffffff;stroke-width:0.397605;fill-opacity:1"
        id="rect229-3-6-7-6"

@@ -4,9 +4,8 @@ export default class Benchmarks {
     this.project = project;
     let that = this;
     this.routes.push({ url: '/benchmarks', setup: benchmarksPage });
-    this.routes.push({ url: '/', setup: benchmarksPage });
 
-    document.addEventListener('click', this.benchmarkClickEvent.bind(this));
+    document.getElementById('main-container').addEventListener('click', this.benchmarkClickEvent.bind(this));
 
     function benchmarksPage() {
       const template = document.createElement('template');
@@ -32,7 +31,7 @@ export default class Benchmarks {
         <div class="container is-max-widescreen">
           <section class="section">
               <div class=title>Official Benchmarks</div>
-              <table class="table mx-auto" id="benchmarks-table" style="min-width: 700px;">
+              <table class="table mx-auto" id="benchmarks-table" style="width: 100%; min-width: 700px;">
                 <thead>
                   <tr>
                     <th>Robot</th>
@@ -103,84 +102,94 @@ export default class Benchmarks {
   benchmarkClickEvent(event) {
     const benchmark = event.target.id.split('-')[0];
     if (event.target.id.endsWith('start')) {
-      const url = '/run?url=https://github.com/robobenchmark/robobenchmark.github.io/blob/testing/docs/benchmarks/' +
-        benchmark + '/worlds/' + benchmark + '.wbt';
+      const url = '/benchmark?name=' + benchmark;
       this.project.load(url);
-      return;
-      this.project.runWebotsView(url);
       return;
     }
 
     if (!document.getElementById('benchmark-table'))
       return;
 
-    const targetId = event.target.parentNode.id;
-    let that = this;
-    document.getElementById('benchmark-table').childNodes.forEach(function(row) {
-      if (row.lastChild && row.lastChild.childNodes[1].classList.contains('is-primary') && targetId !== row.id) {
-        row.lastChild.childNodes[1].classList.toggle('is-primary');
-        row.classList.toggle('dark-row');
-        document.getElementById('benchmark-table').deleteRow(row.rowIndex)
-        that.removePreview();
-      }
-    });
+    const targetId = event.target.id;
+    const targetParentId = event.target.parentNode.id;
+    const target2ParentId = event.target.parentNode.parentNode.id;
+    const target3ParentId = event.target.parentNode.parentNode.parentNode.id;
 
-    if (!targetId.startsWith('benchmark'))
+    if (targetId === 'main-container' || targetId === '') {
+      document.getElementById('benchmark-table').childNodes.forEach(function(row) {
+        if (row.lastChild && row.lastChild.childNodes[1].classList.contains('is-primary')) {
+          row.classList.toggle('dark-row');
+          row.childNodes.forEach(function(node) {
+            if (node !== row.lastChild && node.style)
+              node.style.pointerEvents = 'all';
+            else if (node === row.lastChild)
+              node.childNodes[1].classList.toggle('is-primary');
+          });
+          document.getElementById('benchmark-table').deleteRow(row.rowIndex)
+        }
+      });
+    }
+
+    let rowId;
+    if (targetParentId.startsWith('benchmark'))
+      rowId = targetParentId;
+    else if (target2ParentId.startsWith('benchmark'))
+      rowId = target2ParentId;
+    /* else if (target3ParentId.startsWith('benchmark'))
+      rowId = target3ParentId; */
+    else
       return;
 
-    let benchmarkRow = document.getElementById(targetId);
-    benchmarkRow.classList.toggle('dark-row');
-    benchmarkRow.lastChild.childNodes[1].classList.toggle('is-primary');
+    console.log(rowId);
 
-    if (document.getElementById('benchmark-preview')) {
-      this.removePreview();
+    let benchmarkRow = document.getElementById(rowId);
+    benchmarkRow.classList.toggle('dark-row');
+    benchmarkRow.childNodes.forEach(function(node) {
+      if (node !== benchmarkRow.lastChild && node.style)
+        node.style.pointerEvents = 'none';
+      else if (node === benchmarkRow.lastChild)
+        node.childNodes[1].classList.toggle('is-primary');
+    });
+
+    if (document.getElementById('benchmark-preview'))
       document.getElementById('benchmark-preview').remove();
-    } else {
+    else {
       const rowIndex = benchmarkRow.rowIndex;
       const table = document.getElementById("benchmarks-table");
       const row = table.insertRow(rowIndex + 1);
-      row.className = 'dark-row is-clickable';
+      row.className = 'is-clickable dark-row';
       row.id = 'benchmark-preview';
       row.style.borderTop = 'none';
       row.innerHTML =
-        `<td class="has-text-left" colspan="3" style="vertical-align: middle;">
-          <div class="columns" style="display: flex">
-            <div class="column is-three-fifths" style="min-width: 175px">
-              <p style="font-size: small;">Difficulty level:</p>
-              <p style="font-size: small;">Number of participants:</p>
-              <p style="font-size: small;">Robot:</p>
-              <p style="font-size: small;">Programming language:</p>
-              <p style="font-size: small;">Minimum commitment:</p>
+        `<td class="has-text-left" colspan="5" style="vertical-align: middle; pointer-events: none;">
+          <div class="columns">
+            <div class="column is-two-fifths" id="test-center">
+              <div class="columns" style="display: flex;">
+                <div class="column is-three-fifths" style="min-width: 175px">
+                  <p style="font-size: small;">Difficulty level:</p>
+                  <p style="font-size: small;">Number of participants:</p>
+                  <p style="font-size: small;">Robot:</p>
+                  <p style="font-size: small;">Programming language:</p>
+                  <p style="font-size: small;">Minimum commitment:</p>
+                </div>
+                <div class="column" style="min-width: 115px">
+                  <p style="font-size: small; font-weight: bold;">Middle School</p>
+                  <p style="font-size: small; font-weight: bold;">5332</p>
+                  <p style="font-size: small; font-weight: bold;">Thymio II</p>
+                  <p style="font-size: small; font-weight: bold;">Python</p>
+                  <p style="font-size: small; font-weight: bold;">A few minutes</p>
+                </div>
+              </div>
+              <button class="button is-small is-primary is-outlined" style="pointer-events: all;">Learn more</button>
             </div>
             <div class="column">
-              <p style="font-size: small; font-weight: bold;">Middle School</p>
-              <p style="font-size: small; font-weight: bold;">5332</p>
-              <p style="font-size: small; font-weight: bold;">Thymio II</p>
-              <p style="font-size: small; font-weight: bold;">Python</p>
-              <p style="font-size: small; font-weight: bold;">A few minutes</p>
+              <div id="benchmark-preview-container"></div>
             </div>
           </div>
-        </td>
-        <td class="has-text-centered" colspan="2" style="vertical-align: middle;">
-          <div id="benchmark-preview-container" style="width: 100%; aspect-ratio: 16 / 9; padding: 10px;"></div>
         </td>`;
-        this.showPreview();
+        let benchmark = 'robot_programming';
+        const reference = '/docs/benchmarks/' + benchmark + '/animation/' + benchmark;
+        this.project.runWebotsView(reference);
     }
-  }
-
-  showPreview() {
-    if (!this.benchmarkPreviewWebotsView) {
-      this.benchmarkPreviewWebotsView = document.createElement('webots-view');
-      this.benchmarkPreviewWebotsView.id = 'benchmark-preview-webots-view';
-      document.getElementById('benchmark-preview-container').append(this.benchmarkPreviewWebotsView);
-    }
-    const reference = '/docs/benchmarks/robot_programming/animation';
-    this.benchmarkPreviewWebotsView.loadAnimation(`${reference}/scene.x3d`, `${reference}/animation.json`,
-      this.project.isMobileDevice(), false, `${reference}/thumbnail.jpg`);
-  }
-
-  removePreview() {
-    if (this.benchmarkPreviewWebotsView)
-      this.benchmarkPreviewWebotsView.remove()
   }
 }

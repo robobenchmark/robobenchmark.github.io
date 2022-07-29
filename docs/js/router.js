@@ -33,8 +33,9 @@ export default class Router {
               element.hash === '')) {
           event.preventDefault();
           that.load(element.pathname + element.search + element.hash);
-          if (element.hash === '')
+          if (element.hash === '') {
             body.scrollTo(0, 0);
+          }
         }
       }
     });

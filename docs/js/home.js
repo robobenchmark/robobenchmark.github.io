@@ -4,7 +4,7 @@ export default class Home {
     this.routes = routes;
     this.project = project;
     let that = this;
-    this.routes.push({ url: '/home', setup: homePage });
+    this.routes.push({ url: '/', setup: homePage });
 
     function homePage() {
       that.logIn();
@@ -13,7 +13,7 @@ export default class Home {
       template.innerHTML =
         `<section class="hero is-fullheight is-light">
           <div class="hero-body">
-            <div class="container title-container" style="transform: translateX(20%) scale(1.5);">
+            <div class="container title-container" style="transform: translateX(30%) scale(1.5);">
               <figure class="image is-64x64" style="top: 6px; margin-right: 15px;">
                 <img src="docs/images/robotbenchmark-logo-black-eyes.svg" id="title-logo"/>
               </figure>

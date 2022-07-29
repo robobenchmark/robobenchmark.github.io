@@ -89,7 +89,7 @@ export default class User extends Router {
 
     div.innerHTML =
       `<div class="navbar-item">
-        <a class="button is-small is-light is-primary" id="log-in" href="${githubOAuth}">
+        <a class="button is-small is-primary is-outlined" id="log-in" href="${githubOAuth}">
           <span class="icon">
             <i class="fab fa-lg fa-github"></i>
           </span>

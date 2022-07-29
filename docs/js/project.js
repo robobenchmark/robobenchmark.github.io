@@ -97,35 +97,62 @@ export default class Project extends User {
   }
 
   setupWebotsView(page) {
-    const view = (!Project.webotsView)
-      ? '<webots-view id="webots-view"></webots-view>' : '';
+    const view = (!Project.webotsView) ? '<webots-view id="webots-view"></webots-view>' : '';
     let template = document.createElement('template');
-    template.innerHTML = `<section class="section" style="padding:0;height:100%">
-      <div class="simulation-container" id="webots-view-container">${view}</div>`;
-    template.innerHTML += '</section>';
+    template.innerHTML =
+      `<section class="section" style="padding:0;height:100%">
+        <div class="simulation-container" id="webots-view-container">
+          ${view}
+        </div>
+      </section>`;
     this.setup(page, [], template.content);
-    if (!Project.webotsView)
-      Project.webotsView = document.querySelector('webots-view');
-    else
+
+    if (Project.webotsView)
       document.querySelector('#webots-view-container').appendChild(Project.webotsView);
+    else
+      Project.webotsView = document.querySelector('webots-view');
     document.querySelector('#main-container').classList.add('webotsView');
   }
 
-  runWebotsView(name, url1) {
-    const url = this.findGetParameter('url');
-    const server = 'https://testing.webots.cloud/ajax/server/session.php?url=' + url;
-    const mode = 'x3d';
+  setupPreviewWebotsView() {
+    if (Project.webotsView)
+      Project.webotsView.close();
 
-    this.setupWebotsView('benchmark/' +  + '/');
+    const view = (!Project.webotsView) ? '<webots-view id="webots-view"></webots-view>' : '';
+    document.getElementById('benchmark-preview-container').innerHTML = (!Project.webotsView) ?
+      '<webots-view id="webots-view"></webots-view>' : '';;
+
+    if (Project.webotsView)
+      document.querySelector('#benchmark-preview-container').appendChild(Project.webotsView);
+    else
+      Project.webotsView = document.querySelector('webots-view');
+  }
+
+  runWebotsView(data) {
+    let url, server, mode;
+    if (data)
+      this.setupPreviewWebotsView();
+    else {
+      let benchmark = this.findGetParameter('name');
+      url = benchmark ? 'https://github.com/robobenchmark/robobenchmark.github.io/blob/testing/docs/benchmarks/' +
+        benchmark + '/worlds/' + benchmark + '.wbt' : this.findGetParameter('url');
+      server = 'https://testing.webots.cloud/ajax/server/session.php?url=' + url;
+      mode = 'x3d';
+      this.setupWebotsView(benchmark);
+    }
 
     return new Promise((resolve, reject) => {
-      let dotIndex = url.lastIndexOf('/') + 1;
-      let thumbnailUrl = (url.slice(0, dotIndex) + "." + url.slice(dotIndex)).replace('github.com',
-        'raw.githubusercontent.com').replace('/blob', '').replace('.wbt', '.jpg');
-
-      Project.webotsView.connect(server, mode, false, undefined, 300, thumbnailUrl);
-      Project.webotsView.showQuit = false;
-      resolve();
+      if (data) {
+        Project.webotsView.loadAnimation(data + '.x3d', data + '.json', this._isMobileDevice(), false, data + '.jpg');
+      } else {
+        let dotIndex = url.lastIndexOf('/') + 1;
+        let thumbnailUrl = (url.slice(0, dotIndex) + "." + url.slice(dotIndex)).replace('github.com',
+          'raw.githubusercontent.com').replace('/blob', '').replace('.wbt', '.jpg');
+  
+        Project.webotsView.connect(server, mode, false, undefined, 300, thumbnailUrl);
+        Project.webotsView.showQuit = false;
+        resolve();
+      }
     });
 
     /* promise.then(() => {

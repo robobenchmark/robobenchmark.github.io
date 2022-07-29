@@ -1,7 +1,7 @@
 import Project from './project.js';
 
 document.addEventListener('DOMContentLoaded', function() {
-  Project.run('robotbenchmark', footer(), [{ url: '/run', setup: runPage }]);
+  Project.run('robotbenchmark', footer(), [{ url: '/benchmark', setup: benchmarkPage }]);
 
   function footer() {
     let template = document.createElement('template');
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
     return template.content.firstChild;
   }
 
-  function runPage(project) {
+  function benchmarkPage(project) {
     project.runWebotsView();
   }
 });
