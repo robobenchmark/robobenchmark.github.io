@@ -5,7 +5,7 @@ export default class About {
     function aboutPage() {
       const template = document.createElement('template');
       template.innerHTML =
-        `<section class="hero is-medium is-light">
+        `<section class="hero is-medium is-light is-background-gradient">
           <div class="hero-body">
             <div class="container title-container">
               <figure class="image is-64x64" style="margin-right: 15px; margin-top: 7px;">

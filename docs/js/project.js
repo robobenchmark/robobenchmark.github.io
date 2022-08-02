@@ -27,7 +27,7 @@ export default class Project extends User {
         that.notFound();
         resolve();
       }
-      fetch('/ajax/animation/list.php', {method: 'post', body: JSON.stringify({url: url, type: url.pathname[1]})})
+      /* fetch('/ajax/animation/list.php', {method: 'post', body: JSON.stringify({url: url, type: url.pathname[1]})})
         .then(function(response) {
           return response.json();
         })
@@ -71,7 +71,7 @@ export default class Project extends User {
             that.runWebotsView(data.animation);
             resolve();
           }
-        });
+        }); */
     });
     return promise;
   }
@@ -120,7 +120,7 @@ export default class Project extends User {
 
     const view = (!Project.webotsView) ? '<webots-view id="webots-view"></webots-view>' : '';
     document.getElementById('benchmark-preview-container').innerHTML = (!Project.webotsView) ?
-      '<webots-view id="webots-view"></webots-view>' : '';;
+      '<webots-view id="webots-view"></webots-view>' : '';
 
     if (Project.webotsView)
       document.querySelector('#benchmark-preview-container').appendChild(Project.webotsView);
@@ -133,7 +133,7 @@ export default class Project extends User {
     if (data)
       this.setupPreviewWebotsView();
     else {
-      let benchmark = this.findGetParameter('name');
+      let benchmark = this.findGetParameter('name').replace('-', '_');;
       url = benchmark ? 'https://github.com/robobenchmark/robobenchmark.github.io/blob/testing/docs/benchmarks/' +
         benchmark + '/worlds/' + benchmark + '.wbt' : this.findGetParameter('url');
       server = 'https://testing.webots.cloud/ajax/server/session.php?url=' + url;

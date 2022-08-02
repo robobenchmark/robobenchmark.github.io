@@ -85,11 +85,12 @@ export default class User extends Router {
       '&allow_signup=' + this.allowSignUp;
 
     const username = this.username ? this.username : 'Anonymous';
-    const avatar = this.avatar ? this.avatar : 'docs/images/profile.png';
+    const avatar = this.avatar ? this.avatar :
+      'docs/images/profile.png';
 
     div.innerHTML =
       `<div class="navbar-item">
-        <a class="button is-small is-primary is-outlined" id="log-in" href="${githubOAuth}">
+        <a class="button is-small is-primary is-outlined" style="max-width: 80px;" id="log-in" href="${githubOAuth}">
           <span class="icon">
             <i class="fab fa-lg fa-github"></i>
           </span>

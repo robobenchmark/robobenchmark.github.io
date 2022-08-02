@@ -15,11 +15,11 @@ export default class Router {
       if (window.scrollY == 0 && document.querySelector('.navbar').classList.contains('is-dark')) {
         document.querySelector('.navbar').classList.toggle('is-dark');
         document.querySelector('.navbar').classList.toggle('is-light');
-        document.getElementById('navbar-logo').src = 'docs/images/robotbenchmark-logo-black.svg';
+        document.getElementById('navbar-logo').src = document.getElementById('navbar-logo').src.replace('white', 'black');
       } else if (document.querySelector('.navbar').classList.contains('is-light')) {
         document.querySelector('.navbar').classList.toggle('is-dark');
         document.querySelector('.navbar').classList.toggle('is-light');
-        document.getElementById('navbar-logo').src = 'docs/images/robotbenchmark-logo-white.svg';
+        document.getElementById('navbar-logo').src = document.getElementById('navbar-logo').src.replace('black', 'white');
       }
     });
 
@@ -34,7 +34,7 @@ export default class Router {
           event.preventDefault();
           that.load(element.pathname + element.search + element.hash);
           if (element.hash === '') {
-            body.scrollTo(0, 0);
+            window.scrollTo(0, 0);
           }
         }
       }
@@ -55,7 +55,8 @@ export default class Router {
       `<nav id="navbar" class="navbar is-light is-fixed-top">
         <div class="navbar-brand">
           <a class="navbar-item is-size-5" id="navbar-home" href="/" style="margin-right: 30px;">
-            <img src="docs/images/robotbenchmark-logo-black.svg" id="navbar-logo"/>&ensp;
+            <img src="https://raw.githubusercontent.com/robobenchmark/robobenchmark.github.io/testing/docs/images/robotbenchmark-logo-black.svg"
+              id="navbar-logo"/>&ensp;
               <strong>robot</strong><span class="has-text-primary">benchmark</span>
           </a>
           <a class="navbar-burger burger" data-target="router-navbar">
@@ -152,7 +153,7 @@ export default class Router {
     let template = document.createElement('template');
     template.innerHTML =
       `<section>
-      <div class="hero-body">
+      <div class="hero-body" style="position: relative; top: 3.25rem;">
       <div class="container">
       <h1 class="title"><i class="fas fa-exclamation-triangle"></i> Page not found (404 error)</h1>
       <p>The requested page: <a href="${url}">${url}</a> was not found.</p>

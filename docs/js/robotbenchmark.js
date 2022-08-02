@@ -1,7 +1,7 @@
 import Project from './project.js';
 
 document.addEventListener('DOMContentLoaded', function() {
-  Project.run('robotbenchmark', footer(), [{ url: '/benchmark', setup: benchmarkPage }]);
+  Project.run('robotbenchmark', footer(), [{ url: '/benchmark-run', setup: benchmarkPage }]);
 
   function footer() {
     let template = document.createElement('template');

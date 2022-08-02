@@ -11,11 +11,12 @@ export default class Home {
 
       const template = document.createElement('template');
       template.innerHTML =
-        `<section class="hero is-fullheight is-light">
+        `<section class="hero is-fullheight is-light is-background-gradient">
           <div class="hero-body">
             <div class="container title-container" style="transform: translateX(30%) scale(1.5);">
               <figure class="image is-64x64" style="top: 6px; margin-right: 15px;">
-                <img src="docs/images/robotbenchmark-logo-black-eyes.svg" id="title-logo"/>
+                <img src="docs/images/robotbenchmark-logo-black-eyes.svg"
+                  id="title-logo"/>
               </figure>
               <div class="title-text">
                 <p class="title is-size-1">
@@ -28,7 +29,7 @@ export default class Home {
             </div>
           </div>
           <div class="more-circle">
-            <i class="fas fa-xl fa-angles-down" style="color: #f5f5f5; animation: scale-animation 3s infinite;"></i>
+            <i class="fas fa-xl fa-angles-down is-scale-animated" style="color: #f5f5f5;"></i>
           <div>
         </section>
         
