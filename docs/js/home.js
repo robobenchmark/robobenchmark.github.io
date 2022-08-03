@@ -4,7 +4,7 @@ export default class Home {
     this.routes = routes;
     this.project = project;
     let that = this;
-    this.routes.push({ url: '/', setup: homePage });
+    this.routes.push({ url: '/home', setup: homePage });
 
     function homePage() {
       that.logIn();

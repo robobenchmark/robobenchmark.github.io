@@ -4,9 +4,10 @@ export default class Benchmarks {
     this.project = project;
     let that = this;
     this.routes.push({ url: '/benchmarks', setup: benchmarksPage });
+    this.routes.push({ url: '/', setup: benchmarksPage });
     this.setupBenchmarkPages();
 
-    document.getElementById('main-container').addEventListener('click', this.benchmarkClickEvent.bind(this));
+    //document.getElementById('main-container').addEventListener('click', this.benchmarkClickEvent.bind(this));
 
     function benchmarksPage() {
       const template = document.createElement('template');
@@ -115,7 +116,7 @@ export default class Benchmarks {
       title = title.join(' ');
       const template = document.createElement('template');
         template.innerHTML =
-          `<section class="hero is-medium is-light is-background-gradient">
+          `<section class="hero is-small is-light is-background-gradient" style="position: relative; padding-top: 45px; padding-bottom: 20px">
             <div class="hero-body">
               <div class="container title-container">
                 <figure class="image is-64x64" style="margin-right: 15px; margin-top: 7px;">
@@ -190,6 +191,7 @@ export default class Benchmarks {
   }
 
   listBenchmarks() {
+    let that = this;
     return new Promise((resolve, reject) => {
       fetch('docs/benchmarks/benchmark_list.txt')
         .then(function(response) { return response.text(); })
@@ -212,7 +214,6 @@ export default class Benchmarks {
   
             let row = document.createElement('tr');
             row.id = 'benchmark-' + title.replaceAll('_', '-');
-            row.className = 'is-clickable';
             row.innerHTML =
               `<td class="has-text-centered" style="vertical-align: middle;" title="${robot}">
                 <figure class="image is-48x48">
@@ -229,9 +230,13 @@ export default class Benchmarks {
                 ${description}
               </td>
               <td style="vertical-align: middle;">
-                <button class="button is-small" id="${title}-start">Start</button>
+                <button class="button is-small" id="${title}-start" href="about">Start</button>
               </td>`;
             document.getElementById('benchmark-table').appendChild(row);
+            document.getElementById(title + '-start').addEventListener('click', function(event) {
+              console.log(title);
+              that.project.load('/benchmarks/' + title.replace('_', '-'));
+            })
           });
           resolve();
         });
@@ -241,19 +246,14 @@ export default class Benchmarks {
   benchmarkClickEvent(event) {
     const benchmark = event.target.id.split('-')[0].replaceAll('_', '-');
     if (event.target.id.endsWith('start')) {
-      const url = '/benchmarks/' + benchmark;
-      this.project.load(url);
-      return;
-    }
-    /* if (event.target.id.endsWith('start')) {
       const url = '/benchmark-run?name=' + benchmark;
       this.project.load(url);
       return;
     } else if (event.target.id.endsWith('more')) {
-      const url = '/benchmarks/' + 'robot-programming';
+      const url = '/benchmarks/' + benchmark;
       this.project.load(url);
       return;
-    } */
+    }
 
     if (!document.getElementById('benchmark-table'))
       return;
@@ -326,7 +326,7 @@ export default class Benchmarks {
                 </div>
               </div>
               <button class="button is-small is-primary is-outlined" style="pointer-events: all;" id="${benchmark}-more"
-                href="benchmarks/robot-programming">
+                href="benchmarks/${benchmark}">
                 Learn more
               </button>
             </div>
