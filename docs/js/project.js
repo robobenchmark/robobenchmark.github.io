@@ -143,7 +143,7 @@ export default class Project extends User {
 
     return new Promise((resolve, reject) => {
       if (data) {
-        Project.webotsView.loadAnimation(data + '.x3d', data + '.json', this._isMobileDevice(), false, data + '.jpg');
+        Project.webotsView.loadAnimation(data + '.x3d', data + '.json', true, this._isMobileDevice(), data + '.jpg');
       } else {
         let dotIndex = url.lastIndexOf('/') + 1;
         let thumbnailUrl = (url.slice(0, dotIndex) + "." + url.slice(dotIndex)).replace('github.com',
