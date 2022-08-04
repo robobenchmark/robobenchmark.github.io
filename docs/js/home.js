@@ -4,18 +4,18 @@ export default class Home {
     this.routes = routes;
     this.project = project;
     let that = this;
-    this.routes.push({ url: '/home', setup: homePage });
+    this.routes.push({ url: '/', setup: homePage });
 
     function homePage() {
       that.logIn();
 
       const template = document.createElement('template');
       template.innerHTML =
-        `<section class="hero is-fullheight is-light is-background-gradient">
+        `<section class="hero is-fullheight is-dark is-background-gradient">
           <div class="hero-body">
             <div class="container title-container" style="transform: translateX(30%) scale(1.5);">
               <figure class="image is-64x64" style="top: 6px; margin-right: 15px;">
-                <img src="docs/images/robotbenchmark-logo-black-eyes.svg"
+                <img src="docs/images/robotbenchmark-logo-white-eyes.svg"
                   id="title-logo"/>
               </figure>
               <div class="title-text">

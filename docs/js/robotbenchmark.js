@@ -1,7 +1,7 @@
 import Project from './project.js';
 
 document.addEventListener('DOMContentLoaded', function() {
-  Project.run('robotbenchmark', footer(), [{ url: '/benchmark-run', setup: benchmarkPage }]);
+  Project.run('robotbenchmark', footer(), [{ url: '/run', setup: runPage }]);
 
   function footer() {
     let template = document.createElement('template');
@@ -28,7 +28,8 @@ document.addEventListener('DOMContentLoaded', function() {
     return template.content.firstChild;
   }
 
-  function benchmarkPage(project) {
+  function runPage(project) {
     project.runWebotsView();
+    document.getElementById('navbar').style.backgroundColor = '#363636';
   }
 });

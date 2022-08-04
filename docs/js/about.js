@@ -5,11 +5,11 @@ export default class About {
     function aboutPage() {
       const template = document.createElement('template');
       template.innerHTML =
-        `<section class="hero is-medium is-light is-background-gradient">
+        `<section class="hero is-medium is-dark is-background-gradient">
           <div class="hero-body">
             <div class="container title-container">
               <figure class="image is-64x64" style="margin-right: 15px; margin-top: 7px;">
-                <img src="docs/images/robotbenchmark-logo-black-eyes.svg" id="title-logo"/>
+                <img src="docs/images/robotbenchmark-logo-white-eyes.svg" id="title-logo"/>
               </figure>
               <div class="title-text">
                 <p class="title is-size-1 is-regular">

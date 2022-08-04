@@ -12,15 +12,10 @@ export default class Router {
     let that = this;
 
     document.addEventListener('scroll', function(event) {
-      if (window.scrollY == 0 && document.querySelector('.navbar').classList.contains('is-dark')) {
-        document.querySelector('.navbar').classList.toggle('is-dark');
-        document.querySelector('.navbar').classList.toggle('is-light');
-        document.getElementById('navbar-logo').src = document.getElementById('navbar-logo').src.replace('white', 'black');
-      } else if (document.querySelector('.navbar').classList.contains('is-light')) {
-        document.querySelector('.navbar').classList.toggle('is-dark');
-        document.querySelector('.navbar').classList.toggle('is-light');
-        document.getElementById('navbar-logo').src = document.getElementById('navbar-logo').src.replace('black', 'white');
-      }
+      if (window.scrollY == 0)
+        document.getElementById('navbar').style.backgroundColor = 'transparent';
+      else
+        document.getElementById('navbar').style.backgroundColor = '#363636';
     });
 
     body.addEventListener('click', function(event) {
@@ -52,10 +47,10 @@ export default class Router {
       document.body.removeChild(navbar);
     let template = document.createElement('template');
     template.innerHTML =
-      `<nav id="navbar" class="navbar is-light is-fixed-top">
+      `<nav id="navbar" class="navbar is-dark is-fixed-top">
         <div class="navbar-brand">
           <a class="navbar-item is-size-5" id="navbar-home" href="/" style="margin-right: 30px;">
-            <img src="https://raw.githubusercontent.com/robobenchmark/robobenchmark.github.io/testing/docs/images/robotbenchmark-logo-black.svg"
+            <img src="https://raw.githubusercontent.com/robobenchmark/robobenchmark.github.io/testing/docs/images/robotbenchmark-logo-white.svg"
               id="navbar-logo"/>&ensp;
               <strong>robot</strong><span class="has-text-primary">benchmark</span>
           </a>

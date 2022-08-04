@@ -1,12 +1,12 @@
-robot_programming//1//Learn how to program a robot, save your controller program, revert and run the simulation.//Thymio2
-obstacle_avoidance//2//Program a Thymio II robot to cross a classroom filled with obstacles as quickly as possible.//Thymio2
-maze_runner//2//Program a Thymio II robot to complete a maze without colliding with the walls.//Thymio2
-square_path//2//Program a Pioneer 3-DX robot to follow a 2m x 2m square trajectory, quickly and precisely.//Pioneer3dx
-inverted_pendulum//3//Program an e-puck robot to maintain an inverted pendulum up as long as possible.//E-Puck
-pick_and_place//3//Program a youBot mobile manipulator robot to pick and place a cube as quickly as possible.//Youbot
-pit_escape//3//Program a BB-8 robot lost in a sand desert to climb out of a pit as quickly as possible.//BB-8
-wall_following//3//Program a Pioneer 3-DX robot to follow a random wall on its left-hand side, quickly and precisely.//Pioneer3dx
-highway_driving//4//Program a Lincoln MKZ autonomous car to drive as fast as possible on a crowded highway.//LincolnMKZ
-humanoid_sprint//4//Program a Aldebaran NAO humanoid robot to walk as quickly as possible on a 10 meters race.//Nao
-humanoid_marathon//5//Program a Robotis OP2 humanoid robot to walk as far as possible before its battery runs out of energy.//RobotisOp2
-visual_tracking//5//Program an Aibo robot to move its head to track a rubber duck moving in a scattered environment.//AiboErs7
+robot_programming//1//Learn how to program a robot, save your controller program, revert and run the simulation.//Thymio2//Python//A few minutes//4512
+obstacle_avoidance//2//Program a Thymio II robot to cross a classroom filled with obstacles as quickly as possible.//Thymio2//Python//A couple of hours//4245
+maze_runner//2//Program a Thymio II robot to complete a maze without colliding with the walls.//Thymio2//Python//A couple of hours//3526
+square_path//2//Program a Pioneer 3-DX robot to follow a 2m x 2m square trajectory, quickly and precisely.//Pioneer3dx//Python//A couple of hours//3152
+inverted_pendulum//3//Program an e-puck robot to maintain an inverted pendulum up as long as possible.//E-Puck//Python//A couple of hours//2789
+pick_and_place//3//Program a youBot mobile manipulator robot to pick and place a cube as quickly as possible.//Youbot//Python//A few hours//2682
+pit_escape//3//Program a BB-8 robot lost in a sand desert to climb out of a pit as quickly as possible.//BB-8//Python//A few hours//2503
+wall_following//3//Program a Pioneer 3-DX robot to follow a random wall on its left-hand side, quickly and precisely.//Pioneer3dx//Python//A few hours//2104
+highway_driving//4//Program a Lincoln MKZ autonomous car to drive as fast as possible on a crowded highway.//LincolnMKZ//Python//A couple of days//2029
+humanoid_sprint//4//Program a Aldebaran NAO humanoid robot to walk as quickly as possible on a 10 meters race.//Nao//Python//A couple of days//1598
+humanoid_marathon//5//Program a Robotis OP2 humanoid robot to walk as far as possible before its battery runs out of energy.//RobotisOp2//Python//A couple of days//1250
+visual_tracking//5//Program an Aibo robot to move its head to track a rubber duck moving in a scattered environment.//AiboErs7//Python//A couple of days//1186

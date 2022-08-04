@@ -11,10 +11,42 @@
    inkscape:version="1.2 (1:1.2+202206011327+fc4e4096c5)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <defs
-     id="defs6" />
+     id="defs6">
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3261"
+       id="linearGradient3263"
+       x1="33.42852"
+       y1="43.348297"
+       x2="103.04338"
+       y2="66.510765"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3261">
+      <stop
+         style="stop-color:#00d1b2;stop-opacity:1;"
+         offset="0.60084873"
+         id="stop3257" />
+      <stop
+         style="stop-color:#edca5f;stop-opacity:1;"
+         offset="1"
+         id="stop3259" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3261"
+       id="linearGradient7566"
+       gradientUnits="userSpaceOnUse"
+       x1="33.42852"
+       y1="43.348297"
+       x2="103.04338"
+       y2="66.510765" />
+  </defs>
   <sodipodi:namedview
      id="namedview4"
      pagecolor="#505050"
@@ -26,8 +58,8 @@
      inkscape:deskcolor="#505050"
      showgrid="false"
      inkscape:zoom="3.5776236"
-     inkscape:cx="37.874303"
-     inkscape:cy="72.813697"
+     inkscape:cx="30.187636"
+     inkscape:cy="73.093212"
      inkscape:window-width="1848"
      inkscape:window-height="1016"
      inkscape:window-x="72"
@@ -38,13 +70,17 @@
      inkscape:groupmode="layer"
      inkscape:label="Image"
      id="g8">
-    <rect
-       style="fill:#00d1b2;fill-opacity:1;stroke-width:0.631478"
-       id="rect229-3-6-7-6-1"
-       width="95.851089"
-       height="27"
-       x="20.072956"
-       y="15.382523" />
+    <g
+       id="g3195"
+       style="fill:url(#linearGradient3263);fill-opacity:1">
+      <rect
+         style="fill:url(#linearGradient7566);fill-opacity:1;stroke-width:0.631478"
+         id="rect229-3-6-7-6-1-3"
+         width="95.851089"
+         height="27"
+         x="20.072956"
+         y="15.382523" />
+    </g>
     <g
        id="g894"
        style="fill:#363636;fill-opacity:1">
