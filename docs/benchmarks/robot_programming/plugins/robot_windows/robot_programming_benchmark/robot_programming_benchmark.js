@@ -9,7 +9,6 @@ if (window.navigator.platform.startsWith('Mac'))
   document.getElementById('saveShortcut').innerHTML = 'Cmd-S';
 
   window.robotWindow.receive = function(message, robot) {
-    console.log('Supervisor message: ' + message);
   if (message.startsWith('percent:'))
     document.getElementById('achievement').innerHTML = metricToString(parseFloat(message.substr(8)));
   else if (message.startsWith('stop:')) {
