@@ -12,14 +12,12 @@ p, h2, h3, code {
 img {
   max-width: 100%;
 }
-
 .wrapper{
   display:flex;
   flex-direction: row;
   align-items: center;
   margin-top: 5px;
 }
-
 .tab{
   cursor: pointer;
   padding:10px 20px;
@@ -31,7 +29,6 @@ img {
   position: relative;
   align-self: center;
 }
-
 .panel{
   background:#fffffff6;
   box-shadow: 0 2rem 2rem #00000080;
@@ -54,7 +51,6 @@ img {
         opacity:1;
     }
 }
-
 .radio{
   display:none;
 }

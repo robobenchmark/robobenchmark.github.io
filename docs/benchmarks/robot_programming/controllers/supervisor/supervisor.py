@@ -5,12 +5,13 @@ import os
 import sys
 
 try:
-    includePath = os.environ.get("WEBOTS_HOME") + "/projects/samples/robotbenchmark/include"
+    includePath = "../../../include"
     includePath.replace('/', os.sep)
     sys.path.append(includePath)
-    from robotbenchmark import robotbenchmarkRecord
+    from benchmark import benchmarkPerformance
 except ImportError:
-    sys.stderr.write("Warning: 'robotbenchmark' module not found.\n")
+    print("error")
+    sys.stderr.write("Warning: 'benchmark' module not found.\n")
     sys.exit(0)
 
 robot = Supervisor()
@@ -29,7 +30,7 @@ while robot.step(timestep) != -1:
         if percent < 0:
             percent = 0
         if t[0] < -0.01 and abs(t[0] - tx) < 0.0001:  # away from starting position and not moving any more
-            message = "stop"
+            message = "complete"
             running = False
         else:
             message = "percent"
@@ -39,11 +40,8 @@ while robot.step(timestep) != -1:
     else:  # wait for record message
         message = robot.wwiReceiveText()
         while message:
-            if message.startswith("record:"):
-                record = robotbenchmarkRecord(message, "robot_programming", percent)
-                robot.wwiSendText(record)
-                break
-            elif message == "exit":
+            if message.startswith("success:"):
+                print(message[9:])
                 break
             message = robot.wwiReceiveText()
 

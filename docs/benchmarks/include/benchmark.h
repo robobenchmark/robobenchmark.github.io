@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ROBOTBENCHMARK_H
-#define ROBOTBENCHMARK_H
+#ifndef BENCHMARK_H
+#define BENCHMARK_H
 
 #include <webots/plugins/robot_window/default.h>
 
@@ -23,7 +23,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-static inline void robotbenchmark_record(const char *answer, const char *benchmark, double record) {
+static inline void benchmark_record(const char *answer, const char *benchmark, double record) {
   const char *separator = strchr(&answer[7], ':');
   int n = strlen(answer) + 9;
   char *user = malloc(n);
@@ -108,4 +108,4 @@ static inline void robotbenchmark_record(const char *answer, const char *benchma
   free(command);
 }
 
-#endif  // ROBOTBENCHMARK_H
+#endif  // BENCHMARK_H

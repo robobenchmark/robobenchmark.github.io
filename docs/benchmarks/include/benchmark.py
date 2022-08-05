@@ -1,11 +1,13 @@
-"""Utility functions to communicate with the robotbenchmark server."""
+"""Utility functions to communicate with the benchmark server."""
 
 import os
 import sys
 
+def benchmarkPerformance(benchmarkName, performance):
+      return benchmarkName + ' completed! Your performance was ' + performance
 
-def robotbenchmarkRecord(answer, benchmark, record):
-    """Return the record info retrieved from the robotbenchmark server."""
+def benchmarkRecord(answer, benchmark, record):
+    """Return the record info retrieved from the benchmark server."""
     answer = answer[7:]  # remove the "record:" header
     if ':' in answer:
         userData = answer.split(':')
