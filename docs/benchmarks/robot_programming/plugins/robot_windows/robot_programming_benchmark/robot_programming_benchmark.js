@@ -8,7 +8,7 @@ let benchmarkPerformance = 0;
 if (window.navigator.platform.startsWith('Mac'))
   document.getElementById('saveShortcut').innerHTML = 'Cmd-S';
 
-  window.robotWindow.receive = function(message, robot) {
+window.robotWindow.receive = function(message, robot) {
   if (message.startsWith('percent:'))
     document.getElementById('achievement').innerHTML = metricToString(parseFloat(message.substr(8)));
   else if (message.startsWith('stop:')) {
