@@ -57,7 +57,8 @@ body {
   background-color: transparent;
 }
 
-.navbar.is-dark .navbar-item.has-dropdown:hover .navbar-link {
+.navbar.is-dark .navbar-item.has-dropdown:hover .navbar-link,
+.navbar.is-dark .navbar-end>a.navbar-item:hover {
   background: rgba(0, 0, 0, 0.3);
 }
 
@@ -71,10 +72,6 @@ body {
 
 #navbar-logo {
   height: 1.5rem;
-}
-
-.navbar-end {
-  margin-right: 10px;
 }
 
 #avatar {
@@ -157,6 +154,10 @@ body {
 }
 
 /* Other */
+
+.hero.is-dark a:not(.button):not(.dropdown-item):not(.tag):not(.pagination-link.is-current) {
+  color: #00d1b2;
+}
 
 .is-vertically-centered {
   margin: 0;

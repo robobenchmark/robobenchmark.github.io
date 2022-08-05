@@ -62,19 +62,19 @@ export default class User extends Router {
               <div class="container is-max-widescreen">
                 <ul id="profile-tabs">
                   <li id='rankings-tab'>
-                    <a>
+                    <a class="has-text-white">
                       <span class="icon is-small"><i class="fas fa-trophy" aria-hidden="true"></i></span>
                       <span>Rankings</span>
                     </a>
                   </li>
                   <li id='benchmarks-tab'>
-                    <a>
+                    <a class="has-text-white">
                       <span class="icon is-small"><i class="fas fa-robot" aria-hidden="true"></i></span>
                       <span>Benchmarks</span>
                     </a>
                   </li>
                   <li id='about-tab'>
-                    <a>
+                    <a class="has-text-white">
                       <span class="icon is-small"><i class="fas fa-user" aria-hidden="true"></i></span>
                       <span>About</span>
                     </a>
@@ -348,11 +348,11 @@ export default class User extends Router {
       if (document.querySelector('#user-menu')) {
         if (that.loggedIn) {
           document.querySelector('#user-menu').style.display = 'auto';
-          document.querySelector('#log-in').style.display = 'none';
+          document.querySelector('#log-in').parentElement.style.display = 'none';
           that.updateDisplayName();
         } else {
           document.querySelector('#user-menu').style.display = 'none';
-          document.querySelector('#log-in').style.display = 'flex';
+          document.querySelector('#log-in').parentElement.style.display = 'inherit';
         }
         if (that.email === '!')
           that.login();
@@ -382,14 +382,15 @@ export default class User extends Router {
       'docs/images/profile.png';
 
     div.innerHTML =
-      `<div class="navbar-item">
-        <a class="button is-small is-light is-outlined" style="max-width: 80px;" id="log-in" href="${githubOAuth}">
-          <span class="icon">
-            <i class="fab fa-lg fa-github"></i>
-          </span>
-          <span>Log in</span>
-        </a>
-      </div>
+      `<a class="navbar-item" href="/">
+        Home
+      </a>
+      <a class="navbar-item" href="/benchmarks">
+        Benchmarks
+      </a>
+      <a class="navbar-item" href="/about">
+        About
+      </a>
       <div id="user-menu" class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link" id="email"><span name="displayName">
           <p id="username">${username}</p>
@@ -402,6 +403,14 @@ export default class User extends Router {
           <div class="navbar-divider"></div>
           <a class="navbar-item" id="log-out"><i class="fas fa-power-off"> &nbsp; </i>Log out</a>
         </div>
+      </div>
+      <div class="navbar-item">
+        <a class="button is-small is-light is-outlined" style="max-width: 80px;" id="log-in" href="${githubOAuth}">
+          <span class="icon">
+            <i class="fab fa-lg fa-github"></i>
+          </span>
+          <span>Log in</span>
+        </a>
       </div>`;
 
     div.querySelector('a#log-out').addEventListener('click', function(event) {

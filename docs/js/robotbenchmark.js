@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function runPage(project) {
-    project.runWebotsView();
     document.getElementById('navbar').style.backgroundColor = '#363636';
+    project.runWebotsView();
   }
 });

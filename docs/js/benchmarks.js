@@ -4,6 +4,7 @@ export default class Benchmarks {
     this.project = project;
     let that = this;
     this.routes.push({ url: '/benchmarks', setup: benchmarksPage });
+    this.routes.push({ url: '/', setup: benchmarksPage });
     this.setupBenchmarkPages();
 
     function benchmarksPage() {
