@@ -23,6 +23,7 @@ translation = thymio.getField("translation")
 tx = 0
 running = True
 while robot.step(timestep) != -1:
+    print("test")
     t = translation.getSFVec3f()
     if running:
         percent = 1 - abs(0.25 + t[0]) / 0.25

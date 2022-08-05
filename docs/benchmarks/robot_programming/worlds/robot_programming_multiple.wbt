@@ -24,8 +24,8 @@ WorldInfo {
   ]
 }
 Viewpoint {
-  orientation 0.22852818692454097 -0.3392704292446562 -0.9125077772935027 5.090665724609216
-  position -0.720382336266731 -1.1273242494093503 0.6798160854057501
+  orientation 0.1718987342177897 -0.26873704296150386 -0.9477506143045376 5.041436944399811
+  position -0.5716917960852304 -1.0638534563235194 0.49064124314026303
 }
 TexturedBackground {
 }
@@ -38,7 +38,20 @@ DEF THYMIO2 Thymio2 {
   rotation 0 0 1 3.14159
   controller "move"
   controllerArgs []
-  window "<none>"
+}
+DEF THYMIO2 Thymio2 {
+  translation 0.1 0.29 0
+  rotation 0 0 1 3.14159
+  name "Thymio II(1)"
+  controller "move"
+  controllerArgs []
+}
+DEF THYMIO2 Thymio2 {
+  translation 0.27 0.13 0
+  rotation 0 0 1 3.14159
+  name "Thymio II(2)"
+  controller "move"
+  controllerArgs []
 }
 RobotProgrammingBenchmark {
 }
