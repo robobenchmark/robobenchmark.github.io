@@ -26,7 +26,6 @@ WorldInfo {
 Viewpoint {
   orientation 0.3650235088419984 -0.2312005892665386 -0.9018337571390201 5.0279702
   position -0.54871339 -0.85252477 0.55969193
-  follow "Thymio II"
 }
 TexturedBackground {
 }
