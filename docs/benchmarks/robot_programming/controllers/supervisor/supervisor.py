@@ -4,7 +4,7 @@ from controller import Supervisor
 import os
 import sys
 
-try:
+""" try:
     includePath = "../../../include"
     includePath.replace('/', os.sep)
     sys.path.append(includePath)
@@ -12,7 +12,7 @@ try:
 except ImportError:
     print("error")
     sys.stderr.write("Warning: 'benchmark' module not found.\n")
-    sys.exit(0)
+    sys.exit(0) """
 
 robot = Supervisor()
 
