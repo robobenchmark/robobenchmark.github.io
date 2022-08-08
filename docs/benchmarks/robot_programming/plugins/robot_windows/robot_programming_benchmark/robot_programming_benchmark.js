@@ -1,5 +1,5 @@
 import RobotWindow from 'https://cyberbotics.com/wwi/R2022b/RobotWindow.js';
-/* import Benchmark from 'https://cyberbotics.com/wwi/testingR2022b/Benchmark.js'; */
+import Benchmark from 'https://cyberbotics.com/wwi/testingR2022b/Benchmark.js';
 /* global sendBenchmarkRecord, showBenchmarkRecord, showBenchmarkError */
 
 window.robotWindow = new RobotWindow();
@@ -24,6 +24,12 @@ window.robotWindow.receive = function(message, robot) {
 };
 
 function showBenchmarkPerformance(robotWindow, benchmarkName, benchmarkPerformance, benchmarkPerformanceString) {
-  robotWindow.send('success: ' + benchmarkName + ' Benchmark completed! Your performance was ' + benchmarkPerformanceString);
+  robotWindow.send('success: ' + benchmarkName + ' Benchmark complete! Your performance was ' + benchmarkPerformanceString);
+  console.log('Testing...');
+  document.getElementById('connect-button').style.color('violet');
+  console.log('Creating Benchmark instance.');
+  const benchmark = new Benchmark();
+  benchmark.printMessage('Test message.');
+  benchmark.printParentUrl();
   return true;
 }

@@ -4,7 +4,7 @@ import os
 import sys
 
 def benchmarkPerformance(benchmarkName, performance):
-      return benchmarkName + ' completed! Your performance was ' + performance
+      return benchmarkName + ' complete! Your performance was: ' + performance
 
 def benchmarkRecord(answer, benchmark, record):
     """Return the record info retrieved from the benchmark server."""
